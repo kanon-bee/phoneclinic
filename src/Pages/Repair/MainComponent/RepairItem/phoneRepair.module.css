@@ -1,0 +1,55 @@
+.Main {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    margin: 20px;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.Main a {
+    text-decoration: none;
+}
+
+.Main img {
+    height: 70px;
+    width:70px;
+    margin: 2px 0;
+}
+
+.Main:hover {
+    background-color: #a9a7a726;
+    border-radius: 20px;
+    box-shadow: 8px 8px 12px 4px #7da6bf;
+    cursor: pointer;
+}
+
+.Main p {
+    color: #525252;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
+    text-transform: capitalize;
+}
+
+@media (max-width: 675px) {
+    .Main {
+        height: 90px;
+        width: 90px;
+        margin: 15px 0;
+        padding: 10px;
+    }
+
+    .Main img {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .Main p {
+        font-size: 13px;
+    }
+}

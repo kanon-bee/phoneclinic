@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Island+Moments&family=Josefin+Sans&family=Luxurious+Roman&family=Open+Sans:wght@300&family=PT+Serif&family=Permanent+Marker&family=Roboto:wght@100&display=swap');
+
+.Main {
+    width: 100%;
+    height: 1000px;
+    margin: 50px auto;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Luxurious Roman', cursive;
+    overflow:hidden;
+}
+
+.Main h2 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #1D3557;
+    /* font-family: 'Amatic SC', cursive; */
+    font-family: 'Island Moments', cursive;
+    /* font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Luxurious Roman', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive; */
+    font-family: 'PT Serif', serif;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.Sub {
+    width: 100%;
+    /* margin: auto; */
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 799px){
+    .Main {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: 1300px;
+        padding: 5px 0;
+    }
+
+
+    .Main h2 {
+        font-size: 27px;
+    }
+
+    .Img {
+        display: none;
+    }
+
+    .Sub {
+        height: 870px;
+        padding: 35px 0;
+    }
+
+    .Sub div {
+        width: 90%
+    }
+}
+
+@media (max-width:400px) {
+    .Main {
+        height: 1300px;
+    }
+
+    .Sub {
+        height: 1080px;
+    }
+}
+
+/* @media (max-width:304px) {
+    .Main {
+        height: 1290px;
+    }
+} */

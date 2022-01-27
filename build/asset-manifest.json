@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b850743.css",
+    "main.js": "/static/js/main.5cbac51d.js",
+    "static/js/787.564e09e2.chunk.js": "/static/js/787.564e09e2.chunk.js",
+    "static/media/phoneClinic.jpg": "/static/media/phoneClinic.29978518583979557a47.jpg",
+    "static/media/iPhone.png": "/static/media/iPhone.25795d48b819a218c21c.png",
+    "static/media/phoneRepair.jpg": "/static/media/phoneRepair.e49e48513d5ae57166ad.jpg",
+    "static/media/nexus.png": "/static/media/nexus.e6da36fe2508b8cf7124.png",
+    "static/media/oneplus.png": "/static/media/oneplus.e99e1c372ff14e110174.png",
+    "static/media/nokia.jpg": "/static/media/nokia.bdaad2b61c60d3758a0d.jpg",
+    "static/media/devices.jpg": "/static/media/devices.baef88b1f6ffbbcfbb91.jpg",
+    "static/media/asus.jpg": "/static/media/asus.a0d87de073cd533e134f.jpg",
+    "static/media/tablet.jpg": "/static/media/tablet.cd5f28f06354c91f78b7.jpg",
+    "static/media/blackberry.jpg": "/static/media/blackberry.8647ee4245ca8ff2ed26.jpg",
+    "static/media/nexus.jpg": "/static/media/nexus.be7b3d73d56f84f3ca83.jpg",
+    "static/media/sony.jpg": "/static/media/sony.d0e97e07a4e32bdcab1e.jpg",
+    "static/media/pixel.jpg": "/static/media/pixel.0a42c5bb3b2c28ce5b69.jpg",
+    "static/media/apple.jpg": "/static/media/apple.7d650551fcc8b6a5a3f4.jpg",
+    "static/media/lg.jpg": "/static/media/lg.ba09446a432cb7e2a597.jpg",
+    "static/media/mobile.jpg": "/static/media/mobile.daffb65dba8e35b3b383.jpg",
+    "static/media/huawei.jpg": "/static/media/huawei.77f298758527287c6501.jpg",
+    "static/media/samsung.jpg": "/static/media/samsung.3870cc3308627b3e9981.jpg",
+    "static/media/oneplus.jpg": "/static/media/oneplus.695b57a35c18848c5bb6.jpg",
+    "static/media/htc.jpg": "/static/media/htc.6db37bea973f2148a0b7.jpg",
+    "static/media/huawei.png": "/static/media/huawei.889de831ba4a6ee4ebd7.png",
+    "static/media/laptop.jpg": "/static/media/laptop.a026a99e8d0a57da8d27.jpg",
+    "static/media/accesories.png": "/static/media/accesories.9f99d488633b380c5dbb.png",
+    "index.html": "/index.html",
+    "main.1b850743.css.map": "/static/css/main.1b850743.css.map",
+    "main.5cbac51d.js.map": "/static/js/main.5cbac51d.js.map",
+    "787.564e09e2.chunk.js.map": "/static/js/787.564e09e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b850743.css",
+    "static/js/main.5cbac51d.js"
+  ]
+}

@@ -1,0 +1,26 @@
+.Main {
+    height: 250px;
+    width: 90%;
+    margin: 80px auto;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Luxurious Roman', cursive;
+}
+
+.Main button {
+    height: 50px;
+    width: 180px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Main button:hover {
+    background-color: #489548;
+}

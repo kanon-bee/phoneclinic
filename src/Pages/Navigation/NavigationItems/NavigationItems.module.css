@@ -1,0 +1,28 @@
+.NavigationItems {
+    width: 500px;
+    /* margin-top: 10px; */
+}
+
+.NavigationItems ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+}
+
+@media (max-width: 767px){
+    .NavigationItems {
+        width: auto;
+        margin-right: 20px;
+    }
+    
+    .NavigationItems ul {
+        flex-flow: column;
+        padding: 0;
+    }
+
+    .NavigationItems ul li {
+        margin: 5px 60px;
+    }
+}

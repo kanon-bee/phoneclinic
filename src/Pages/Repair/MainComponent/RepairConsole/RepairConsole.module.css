@@ -1,0 +1,12 @@
+.Main {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(1deg, #b1b1b1, #ededed);
+    border-radius: 20px;
+    box-shadow: 3px 3px 12px 8px #ffffff26;
+}

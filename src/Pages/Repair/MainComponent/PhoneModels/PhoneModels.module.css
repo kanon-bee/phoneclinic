@@ -1,0 +1,38 @@
+.Main {
+    width: 100%;
+}
+
+.Main a {
+    text-decoration: none;
+}
+
+.Pic {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.Pic img {
+    height: 470px;
+    width: 70%;
+}
+
+.Mobile {
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .Pic img {
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .Pic img {
+        width: 100%;
+    }
+}

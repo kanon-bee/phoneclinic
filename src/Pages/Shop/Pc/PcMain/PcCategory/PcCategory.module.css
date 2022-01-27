@@ -1,0 +1,28 @@
+.Main {
+    width: 100%;
+    margin: 100px auto;
+}
+
+.Shop {
+    width: 90%;
+    margin: 90px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Shop a {
+    text-decoration: none;
+    margin: 30px 10px;
+    transition: transform .5s;
+}
+
+.Shop a:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 750px) {
+    .Shop a {
+        margin: 10px;
+    }
+}
