@@ -24,7 +24,7 @@ class RepairItem extends Component {
         return (
             <Aux>
                 <Link to={dir} className={styles.Main} >
-                    <img src={this.props.img} />
+                    <img src={this.props.img} alt={this.props.img}/>
                     <p>{this.props.model}</p>
                 </Link>                
             </Aux>

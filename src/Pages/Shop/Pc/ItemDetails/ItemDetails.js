@@ -95,7 +95,7 @@ class ItemDetails extends Component {
                 l5: {price: '230', available: true, img: l5, details: 'Lorem Ipsum is simply dummy text of the printing and typesetting'},
                 l6: {price: '240', available: true, img: l6, details: 'industry. Lorem Ipsum has been the industrys standard dummy'},
                 l7: {price: '250', available: true, img: l7, details: 'text ever since the 1500s, when an unknown printer took a galley'},
-                l7: {price: '260', available: true, img: l8, details: 'text ever since the 1500s, when an unknown printer took a galley'}
+                l8: {price: '260', available: true, img: l8, details: 'text ever since the 1500s, when an unknown printer took a galley'}
             },
     
             monitor: {

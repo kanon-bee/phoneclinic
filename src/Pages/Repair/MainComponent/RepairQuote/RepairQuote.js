@@ -24,7 +24,7 @@ const RepairQuote = (props) => {
             <div className={styles.Main}>
 
                 <div className={styles.Pic}>
-                    <img src={props.pic} />
+                    <img src={props.pic} alt={props.pic} />
                 </div>
 
                 <div className={styles.Heading}>

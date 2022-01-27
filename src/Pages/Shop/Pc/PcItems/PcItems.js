@@ -9,7 +9,7 @@ const pcItems = (props) => {
 
     return (
         <div className={props.device === 'mobile' ? styles.Mobile : styles.Main}>
-            <img src={props.img}/>
+            <img src={props.img} alt={props.img}/>
             <div>
                 <h3>{props.items}</h3>
                 {/* <ul>
