@@ -22,7 +22,7 @@ class pcMain extends Component {
         let img = null;
         let details = null;
         if (this.props.device === 'pc'){
-            img = <img src={bgMain} />;
+            img = <img src={bgMain} alt="BgMain"/>;
             details = <div className={styles.Heading}>
                 <h1>PC Accesories</h1>
                 <h2>Shop PC Accesories</h2>
@@ -30,7 +30,7 @@ class pcMain extends Component {
             </div>
         }
         else {
-            img = <img src={bgMobile} />
+            img = <img src={bgMobile} alt="BgMobile"/>
             details = <div className={styles.Heading}>
                 <h1>SmartPhones</h1>
                 <h2>Shop Smart Phones</h2>
@@ -62,15 +62,15 @@ class pcMain extends Component {
                     <h1>Shop Safely with Phone Clinic</h1>
                     <div className={styles.Head2}>
                         <div>
-                            <img src={delivery} />
+                            <img src={delivery} alt="Delivery"/>
                             <p>Free Delivery</p>
                         </div>
                         <div>
-                            <img src={payment} />
+                            <img src={payment} alt="Payment" />
                             <p>Secure Payment</p>
                         </div>
                         <div>
-                            <img src={gift} />
+                            <img src={gift} alt="Gift" />
                             <p>Gift Voucher</p>
                         </div>
                     </div>

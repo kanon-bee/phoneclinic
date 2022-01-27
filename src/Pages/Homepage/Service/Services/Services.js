@@ -13,7 +13,7 @@ const Services = (props) => {
     return (
         <div  data-aos="fade-down-left" data-aos-easing="ease-out-cubic" className={styles.Services}>
             <span className={styles.Icon}>
-                <img src={props.img} />
+                <img src={props.img} alt={props.title}/>
                 <p>{props.title}</p>
             </span>
         </div>

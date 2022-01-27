@@ -1,14 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from './QuickLinks.module.css';
 
 const quickLinks = (props) => (
     <div className={styles.Main}>
         <h3>Quick Links</h3>
         <ul>
-            <li><a href={props.link} />About Us</li>
-            <li><a href={props.link} />Services</li>
-            <li><a href={props.link} />Appoinment</li>
-            <li><a href={props.link} />Contact</li>
+            <Link to="/">
+                <li>About Us</li>
+            </Link>
+            <Link to="/">
+                <li>Services</li>
+            </Link><Link to="/">
+                <li>Appoinment</li>
+            </Link><Link to="/">
+                <li>Contact</li>
+            </Link>
         </ul>
     </div>
 )

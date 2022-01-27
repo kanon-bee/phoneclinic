@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './ServiceMain.module.css';
 import Services from '../Services/Services';
 import repair from '../../../../Assets/Images/repair.png';

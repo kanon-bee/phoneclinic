@@ -19,7 +19,7 @@ const HeaderIntro2 = () => {
     return (
         <div className={styles.HeaderIntro2}>
             <div className={styles.Container} data-aos="fade-right">
-                <img className={styles.Img} src={img}/>
+                <img className={styles.Img} src={img} alt="HeaderIntro 2"/>
             </div>
 
             <div data-aos="fade-left" className={styles.Para}>
@@ -39,11 +39,11 @@ const HeaderIntro2 = () => {
                     devices. 
                 </p>
                 <ul>
-                    <li><img src={laptop} /></li>
-                    <li><img src={phone} /></li>
-                    <li><img src={gagdet} /></li>
-                    <li><img src={ria} /></li>
-                    <li><img src={western} /></li>
+                    <li><img src={laptop} alt="laptop"/></li>
+                    <li><img src={phone} alt="Phones"/></li>
+                    <li><img src={gagdet} alt="Gagdet"/></li>
+                    <li><img src={ria} alt="Ria"/></li>
+                    <li><img src={western} alt="Western Union"/></li>
                     
                 </ul>
             </div>

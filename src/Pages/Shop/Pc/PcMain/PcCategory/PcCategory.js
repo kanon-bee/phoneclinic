@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PcItems from '../../PcItems/PcItems';
 import Aux from '../../../../../Hoc/Aux/Aux';
 import styles from './PcCategory.module.css';
