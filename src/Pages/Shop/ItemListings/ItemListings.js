@@ -32,7 +32,7 @@ class ItemListings extends Component {
         pageVisited = this.state.pageNumber * itemPerpage;
         displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
             return <div key={item} className={styles.Items}>
-                <img src={product[item]['img']} />
+                <img src={product[item]['img']} alt={item}/>
                 <div className={styles.Details}>
                     {/* <h3>{product[item]['price']}</h3> */}
                     <h3>{product[item]['details']}</h3>

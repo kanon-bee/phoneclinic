@@ -32,7 +32,9 @@ const ServiceMain = () => (
             <Link to="/mobile">
                 <Services img={phone} title='Shop Phone'/>
             </Link>
-            <Services img={transfer} title='Money Transfer'/>
+            <Link to="/currency_converter">
+                <Services img={transfer} title='Money Transfer'/>
+            </Link>
             <Services img={electronics} title='Electronics'/>
             <Services img={cafe} title='Cyber Cafe'/>
         </div>

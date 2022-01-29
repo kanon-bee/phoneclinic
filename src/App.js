@@ -65,6 +65,7 @@ import utilities from './Assets/Images/pcAccesories/utilities.jpg';
 import ram from './Assets/Images/pcAccesories/ram.jpg';
 import speaker from './Assets/Images/pcAccesories/speaker.jpg';
 import ItemDetails from './Pages/Shop/Pc/ItemDetails/ItemDetails';
+import CurrencyConverter from './Pages/CurrencyConverter/CurrencyConverter';
 
 
 class App extends Component {
@@ -389,6 +390,11 @@ class App extends Component {
                                                     product="mobile"
                                                     device={item} />}/>
               })}
+
+              <Route path="/currency_converter" element={<CurrencyConverter switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}/>}/>
 
 
             </Routes>

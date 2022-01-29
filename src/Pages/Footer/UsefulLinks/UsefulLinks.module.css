@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.Main ul a {
+    text-decoration: none;
+}
+
 .Main ul li:hover {
     color: white;
 }

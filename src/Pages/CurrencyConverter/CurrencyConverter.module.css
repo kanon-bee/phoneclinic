@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Creepster&family=Josefin+Sans&family=Luxurious+Roman&family=Open+Sans:wght@300&family=PT+Sans+Narrow:wght@700&family=PT+Serif&family=Permanent+Marker&family=Playball&family=Playfair+Display&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
+
+
+.Main {
+    width: 100%;
+    margin: 20px auto;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    background-color: #97e5ef;
+    font-family: 'PT Serif', serif;
+}
+
+.Details {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    padding: 15px;
+    color: #35858B;;
+}
+
+.SubDetails select {
+    height: 55px;
+    width: 73%;
+    min-width: 270px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #EEF2FF;
+}
+
+.SubDetails select option {
+    color: #676FA3;
+}
+
+.Img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Img img {
+    width: 500px;
+}
+
+.Input {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+.SubDetails input {
+    height: 50px;
+    width: 70%;
+    min-width: 250px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 2px 9px;
+    text-align: center;
+    background-color: #EEF2FF;
+    font-family: 'PT Serif', serif;
+}
+
+.SubDetails button {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin: 15px;
+    background-color: #6867AC;
+    color: #FFBCD1;
+}
+
+.SubDetails button:hover{
+    background-color: #867cb5;
+    color: #ffeff4;
+}
+
+.Query {
+    height: 50px;
+    width: 72%;
+    min-width: 265px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #35858B;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Query h2 {
+    color: #FFF8F3;
+}
+
+@media (max-width: 921px) {
+    .Img img {
+        width: 420px;
+    }
+}
+
+@media (max-width: 789px) {
+    .Img img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 700px) {
+    .Main {
+        flex-flow: column-reverse;
+    }
+}
+
+@media (max-width: 405px) {
+    .Img {
+        display: none;
+    }
+}

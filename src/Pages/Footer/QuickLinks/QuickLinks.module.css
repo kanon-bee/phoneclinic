@@ -33,6 +33,10 @@
     align-items: center;
 }
 
+.Main ul a {
+    text-decoration: none;
+}
+
 .Main h3 {
     color: #EEEEEE;
 }
