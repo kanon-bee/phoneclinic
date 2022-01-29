@@ -117,4 +117,12 @@
     .Img {
         display: none;
     }
+
+    .SubDetails select {
+        height: 40px;
+    }
+
+    .SubDetails input {
+        height: 40px;
+    }
 }
