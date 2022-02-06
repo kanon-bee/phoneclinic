@@ -20,6 +20,10 @@
     transition: transform .5s;
 }
 
+.Items a {
+    text-decoration: none;
+}
+
 .Items:hover{
     transform: scale(1.2);
 }
@@ -40,7 +44,10 @@
     margin: 0 auto;
     height: 165px;
     font-family: 'PT Sans', sans-serif;
+}
 
+.Details h3 {
+    color: #000;
 }
 
 .PaginationMain {

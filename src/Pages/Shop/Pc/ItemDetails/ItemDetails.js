@@ -75,7 +75,7 @@ class ItemDetails extends Component {
 
     state = {
 
-        pc: {
+        laptop: {
             keyboard: {
                 k1: {price: '£20', available: true, img: k1, details: 'Gaming Keyboard RGB USB Wired Rainbow Keyboard'},
                 k2: {price: '£20', available: true, img: k2, details: 'Amazon Basics Matte Black Wired Keyboard, UK QWERTY Layout'},
@@ -147,18 +147,18 @@ class ItemDetails extends Component {
             },
         },
 
-        mobile: {
+        phone: {
             apple: {
-                iphonex: {details: 'iPhoneX', price: '120', available: true, img: iphone1},
-                iphone11: {details: 'iPhone11', price: '120', available: true, img: iphone2},
-                iphone12: {details: 'iPhone12', price: '120', available: true, img: iphone3},
-                iphone13: {details: 'iPhone13', price: '120', available: true, img: iphone4}
+                iphonex: {details: 'iPhone X', price: '120', available: true, img: iphone1},
+                iphone11: {details: 'iPhone 11', price: '120', available: true, img: iphone2},
+                iphone12: {details: 'iPhone 12', price: '120', available: true, img: iphone3},
+                iphone13: {details: 'iPhone 13', price: '120', available: true, img: iphone4}
             },
 
             samsung: {
                 S20: {details: 'S20', price: '120', available: true, img: samsung1},
                 galaxyz: {details: 'Galaxt Z', price: '120', available: true, img: samsung2},
-                s21: {details: 'S 21', price: '120', available: true, img: samsung3},
+                s21: {details: 'S21', price: '120', available: true, img: samsung3},
                 a10: {details: 'A10', price: '120', available: true, img: samsung4}
             },
 
@@ -224,10 +224,14 @@ class ItemDetails extends Component {
     render () {
 
         const product = this.state[this.props.product][this.props.device];
-        console.log(product);
+        // console.log(this.props.product);
 
         return (
-            <ItemListings product={product} />
+            <ItemListings product={product} 
+                            route={this.props.product} 
+                            device={this.props.device}
+                            query={this.props.query}
+                            />
         )
     }
 

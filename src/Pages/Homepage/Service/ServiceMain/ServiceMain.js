@@ -18,24 +18,23 @@ const ServiceMain = () => (
         <h2>What you are Looking For Today</h2>
         <div className={styles.Ext}>
             <Link to="/phone">
-                <Services img={repair} title='Phone Repair'  />
+                <Services img={phone} title='Phone'  />
             </Link>
             <Link to="/tablet">
-                <Services img={tablet} title='Tablet Repair'/>
+                <Services img={tablet} title='Tablet'/>
             </Link>
             <Link to="/laptop">
-                <Services img={laptop} title='Laptop Repair'/>
+                <Services img={laptop} title='Laptop'/>
             </Link>
-            <Link to="/pc">
+            {/* <Link to="/pc">
                 <Services img={accesories} title='Computer Assecories'/>
-            </Link>
-            <Link to="/mobile">
-                <Services img={phone} title='Shop Phone'/>
-            </Link>
+            </Link> */}
             <Link to="/currency_converter">
                 <Services img={transfer} title='Money Transfer'/>
             </Link>
-            <Services img={electronics} title='Electronics'/>
+            <Link to="/phoneaccessories">
+                <Services img={electronics} title='Mobile Accessories'/>
+            </Link>
             <Services img={cafe} title='Cyber Cafe'/>
         </div>
     </div>

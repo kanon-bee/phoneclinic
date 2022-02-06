@@ -21,7 +21,7 @@ class pcMain extends Component {
     render () {
         let img = null;
         let details = null;
-        if (this.props.device === 'pc'){
+        if (this.props.device === 'laptop'){
             img = <img src={bgMain} alt="BgMain"/>;
             details = <div className={styles.Heading}>
                 <h1>PC Accesories</h1>

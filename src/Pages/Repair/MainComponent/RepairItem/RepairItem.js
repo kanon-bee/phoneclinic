@@ -11,14 +11,15 @@ class RepairItem extends Component {
         
         let dir = null;
         if (this.props.device === "phone"){
-            dir = `/phone/${this.props.model}`;
+            dir = `/phone/phonerepair/${this.props.model}`;
         }
         else if (this.props.device === "tablet"){
-            dir = `/tablet/${this.props.model}`;
+            dir = `/tablet/tabletrepair/${this.props.model}`;
         }
         else if (this.props.device === "laptop"){
-            dir = `/laptop/${this.props.model}`;
+            dir = `/laptop/laptoprepair/${this.props.dir}`;
         }
+        console.log(this.props.device);
     
 
         return (

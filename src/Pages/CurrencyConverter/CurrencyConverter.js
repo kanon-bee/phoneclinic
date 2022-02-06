@@ -5,6 +5,10 @@ import SideDrawer from '../Sidedrawer/Sidedrawer';
 import FooterMain from '../Footer/FooterMain/FooterMain'
 import bgMain from '../../Assets/Images/transfer.jpg';
 import Aux from '../../Hoc/Aux/Aux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShieldAlt, faCheckCircle, faAward } from '@fortawesome/free-solid-svg-icons';
+import aos from 'aos';
+import 'aos/dist/aos.css';
 import styles from './CurrencyConverter.module.css';
 
 const data=  {
@@ -197,9 +201,11 @@ class CurrencyConverter extends Component {
         axios.get('https://freecurrencyapi.net/api/v2/latest?apikey=cfaac5f0-8125-11ec-ad91-b75c453dc9f3').then(res => {
             this.setState({rate: res.data.data})
             // console.log(res)
-        })
+        });
 
-        console.log(this.state.selectValue)
+        window.scrollTo(0, 0);
+
+        aos.init({duration: 1300});
     }
 
     getResult = (event) => {
@@ -234,7 +240,7 @@ class CurrencyConverter extends Component {
                             toggleBackdrop={this.props.toggleBackdrop}
                             switch={this.props.switch} />
                 <div className={styles.Main}>
-                    <div className={styles.Details}>
+                    <div data-aos="fade-left" data-aos-easing="ease-out-cubic" className={styles.Details}>
                         <h1>Send Money From The UK</h1>
                         <h3>Send money to all over the world via trusted company from our shop</h3>
                         <div className={styles.SubDetails}>
@@ -257,10 +263,31 @@ class CurrencyConverter extends Component {
 
                         </div>                
                     </div>
-                    <div className={styles.Img}>
-                        <img src={bgMain} />
-                    </div>
     
+                </div>
+
+                <div className={styles.HeadingMain}>
+                    <h1>Send Money securely with us</h1>
+
+                    <div className={styles.Heading}>
+                        <div>
+                            <FontAwesomeIcon className={styles.Font} icon={faAward} size='4x' />
+                            <h2>Trusted Brands</h2>
+                            <p>Send money with the top trusted company.</p>
+                        </div>
+
+                        <div>
+                            <FontAwesomeIcon className={styles.Font} icon={faCheckCircle} size='4x'/>
+                            <h2>Hassle Free</h2>
+                            <p>Sending money from our shop is completely hassle free.</p>
+                        </div>
+
+                        <div>
+                            <FontAwesomeIcon className={styles.Font} icon={faShieldAlt} size='4x' />
+                            <h2>Secure Transaction</h2>
+                            <p>All our transaction is 100% secure and your information will be safe.</p>
+                        </div>
+                    </div>
                 </div>
                 <FooterMain />
             </Aux>

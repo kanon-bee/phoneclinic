@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.645545b0.css",
-    "main.js": "/static/js/main.9def3555.js",
+    "main.css": "/static/css/main.989d7471.css",
+    "main.js": "/static/js/main.099137ee.js",
     "static/js/787.564e09e2.chunk.js": "/static/js/787.564e09e2.chunk.js",
     "static/media/phoneClinic.jpg": "/static/media/phoneClinic.29978518583979557a47.jpg",
     "static/media/iPhone.png": "/static/media/iPhone.25795d48b819a218c21c.png",
@@ -18,6 +18,7 @@
     "static/media/utilities.jpg": "/static/media/utilities.41a1aa4a43d9fe5ace36.jpg",
     "static/media/ipadPro.jpg": "/static/media/ipadPro.309ad74f93dceaf07040.jpg",
     "static/media/s3.jpg": "/static/media/s3.d1b85f268cb848b04964.jpg",
+    "static/media/bg7.jpg": "/static/media/bg7.05ca9750f6a8cad7999d.jpg",
     "static/media/htc1.jpg": "/static/media/htc1.38cda30199e0a803a3bd.jpg",
     "static/media/mobile.jpg": "/static/media/mobile.daffb65dba8e35b3b383.jpg",
     "static/media/nokia3.jpg": "/static/media/nokia3.2c949e226de407e3bbb4.jpg",
@@ -97,8 +98,10 @@
     "static/media/pc.png": "/static/media/pc.4a72794576cce5446ab2.png",
     "static/media/iphone1.jpg": "/static/media/iphone1.6fba5a37322cb389c1b5.jpg",
     "static/media/mouse.jpg": "/static/media/mouse.6af6a58a753d6276995e.jpg",
+    "static/media/transfer.jpg": "/static/media/transfer.e996951e6c7137e6b798.jpg",
     "static/media/huawei.jpg": "/static/media/huawei.77f298758527287c6501.jpg",
     "static/media/samsung.jpg": "/static/media/samsung.3870cc3308627b3e9981.jpg",
+    "static/media/phoneMain2.jpg": "/static/media/phoneMain2.0522ddaa3a0a38bf53c6.jpg",
     "static/media/oneplus.jpg": "/static/media/oneplus.695b57a35c18848c5bb6.jpg",
     "static/media/sp2.jpg": "/static/media/sp2.89bd485232a10791b11d.jpg",
     "static/media/delivery.png": "/static/media/delivery.fa367f7e64b3d5101203.png",
@@ -119,12 +122,12 @@
     "static/media/power.png": "/static/media/power.4a44d71ac24adf46feea.png",
     "static/media/touchpad.png": "/static/media/touchpad.454b845d473c86e1e9aa.png",
     "index.html": "/index.html",
-    "main.645545b0.css.map": "/static/css/main.645545b0.css.map",
-    "main.9def3555.js.map": "/static/js/main.9def3555.js.map",
+    "main.989d7471.css.map": "/static/css/main.989d7471.css.map",
+    "main.099137ee.js.map": "/static/js/main.099137ee.js.map",
     "787.564e09e2.chunk.js.map": "/static/js/787.564e09e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.645545b0.css",
-    "static/js/main.9def3555.js"
+    "static/css/main.989d7471.css",
+    "static/js/main.099137ee.js"
   ]
 }

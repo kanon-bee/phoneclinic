@@ -5,6 +5,7 @@ import Toolbar from "../../Toolbar/Toolbar";
 import SideDrawer from "../../Sidedrawer/Sidedrawer";
 import GetAquote from "../../../Extra/GetAqoute/GetAquote";
 import FooterMain from "../../Footer/FooterMain/FooterMain";
+import { Link } from 'react-router-dom';
 import styles from './ItemListings.module.css'
 
 class ItemListings extends Component {
@@ -23,20 +24,22 @@ class ItemListings extends Component {
     render () {
         let displayItem = null;
         let product = this.props.product;
-        console.log(product);
         
         //Pagination system
         let pageVisited = 0;
-
+        
         const itemPerpage = 3;
         pageVisited = this.state.pageNumber * itemPerpage;
         displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
+            let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/inquiry`
+            console.log(item);
             return <div key={item} className={styles.Items}>
-                <img src={product[item]['img']} alt={item}/>
-                <div className={styles.Details}>
-                    {/* <h3>{product[item]['price']}</h3> */}
-                    <h3>{product[item]['details']}</h3>
-                </div>
+                <Link to={dir}>
+                    <img src={product[item]['img']} alt={item}/>
+                    <div className={styles.Details}>
+                        <h3>{product[item]['details']}</h3>
+                    </div>
+                </Link>
             </div>
         });
         console.log(displayItem);
