@@ -13,7 +13,7 @@
 
 .Pic img {
     height: 470px;
-    width: 70%;
+    width: 60%;
 }
 
 .Mobile {
@@ -28,11 +28,5 @@
 @media (max-width: 1000px) {
     .Pic img {
         height: auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .Pic img {
-        width: 100%;
     }
 }

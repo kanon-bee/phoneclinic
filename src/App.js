@@ -25,27 +25,27 @@ import lenovo from './Assets/Images/Logo/tablet/lenovo.png';
 import microsoft from './Assets/Images/Logo/tablet/microsoft.png';
 import amazon from './Assets/Images/Logo/tablet/amazon.png';
 //Phone Models Image
-import iphone from './Assets/Images/phoneRepair/iphonerepair.jpg';
-import Asus from './Assets/Images/phoneRepair/asus.jpg';
-import BlackBerry from './Assets/Images/phoneRepair/blackberry.jpg';
-import Htc from './Assets/Images/phoneRepair/htc.jpg';
-import Huawei from './Assets/Images/phoneRepair/huawei.jpg';
-import Lg from './Assets/Images/phoneRepair/lg.jpg';
-import Nexus from './Assets/Images/phoneRepair/nexus.jpg';
-import Nokia from './Assets/Images/phoneRepair/nokia.jpg';
-import OnePlus from './Assets/Images/phoneRepair/oneplus.jpg';
-import Pixel from './Assets/Images/phoneRepair/pixel.jpg';
-import Sony from './Assets/Images/phoneRepair/sony.jpg';
-import SamSung from './Assets/Images/phoneRepair/samsung.jpg';
+import iphone from './Assets/Images/phoneRepair/iphone.png';
+import Asus from './Assets/Images/phoneRepair/asus.png';
+import BlackBerry from './Assets/Images/phoneRepair/blackberry.png';
+import Htc from './Assets/Images/phoneRepair/htc.png';
+import Huawei from './Assets/Images/phoneRepair/huawei.png';
+import Lg from './Assets/Images/phoneRepair/lg.png';
+import Nexus from './Assets/Images/phoneRepair/nexus.png';
+import Nokia from './Assets/Images/phoneRepair/nokia.png';
+import OnePlus from './Assets/Images/phoneRepair/oneplus.png';
+import Pixel from './Assets/Images/phoneRepair/pixel.png';
+import Sony from './Assets/Images/phoneRepair/sony.png';
+import SamSung from './Assets/Images/phoneRepair/samsung.png';
 //Tablet Models Image
-import amazonTab from './Assets/Images/tabletRepair/amazon.jpg';
-import asusTab from './Assets/Images/tabletRepair/asus.jpg';
-import googleTab from './Assets/Images/tabletRepair/google.jpg';
-import huaweiTab from './Assets/Images/tabletRepair/huaweiTab.jpg';
-import ipadpro from './Assets/Images/tabletRepair/ipadPro.jpg';
-import lenovoTab from './Assets/Images/tabletRepair/lenovo.jpg';
-import microsoftTab from './Assets/Images/tabletRepair/microsoft.jpg';
-import samsungTab from './Assets/Images/tabletRepair/samsungTab.jpg';
+import amazonTab from './Assets/Images/tabletRepair/amazon.png';
+import asusTab from './Assets/Images/tabletRepair/asus.png';
+import googleTab from './Assets/Images/tabletRepair/google.png';
+import huaweiTab from './Assets/Images/tabletRepair/huawei.png';
+import ipadpro from './Assets/Images/tabletRepair/ipad.png';
+import lenovoTab from './Assets/Images/tabletRepair/lenovo.png';
+import microsoftTab from './Assets/Images/tabletRepair/microsoft.png';
+import samsungTab from './Assets/Images/tabletRepair/samsung.png';
 //Laptop Service Image
 import battery from './Assets/Images/Logo/Laptop/battery.png';
 import keyboard from './Assets/Images/Logo/Laptop/keyboard.png';
@@ -57,20 +57,41 @@ import touchpad from './Assets/Images/Logo/Laptop/touchpad.png';
 import PcMain from './Pages/Shop/Pc/PcMain/PcMain';
 import bgLaptop from './Assets/Images/laptop/l1.jpg';
 //Pc Images
-import desktop from './Assets/Images/pcAccesories/desktop.jpg';
-import Keyboard from './Assets/Images/pcAccesories/keyboard.jpg';
-import Laptop from './Assets/Images/pcAccesories/laptop.jpg';
+import Keyboard from './Assets/Images/pcAccesories/keyboard.png';
 import monitor from './Assets/Images/monitor/monitor.jpg';
-import mouse from './Assets/Images/pcAccesories/mouse.jpg';
-import utilities from './Assets/Images/pcAccesories/utilities.jpg';
+import mouse from './Assets/Images/pcAccesories/mouse.png';
+import utilities from './Assets/Images/pcAccesories/utilities.png';
 import ram from './Assets/Images/pcAccesories/ram.jpg';
 import speaker from './Assets/Images/pcAccesories/speaker.jpg';
+import hdd from './Assets/Images/pcAccesories/hdd.png';
 import ItemDetails from './Pages/Shop/Pc/ItemDetails/ItemDetails';
 import CurrencyConverter from './Pages/CurrencyConverter/CurrencyConverter';
 import PhoneAccessoriesMain from './Pages/Shop/PhoneAccessories/PhoneAccessoriesMain/PhoneAccessoriesMain';
 import PhoneMain from './Pages/Shop/Phone/PhoneMain';
 import InquiryForm from './Pages/Repair/InquiryForm/InquiryForm';
-
+//Laptop logo
+import macbook from './Assets/Images/laptop/laptopLogo/apple.png';
+import acer from './Assets/Images/laptop/laptopLogo/acer.png';
+import dell from './Assets/Images/laptop/laptopLogo/dell.png';
+import hp from './Assets/Images/laptop/laptopLogo/hp.png';
+import samsungLaptop from './Assets/Images/laptop/laptopLogo/samsung.png';
+import sonylaptop from './Assets/Images/laptop/laptopLogo/sony.png';
+//phone Accessories
+import charger from './Assets/Images/phoneAccessories/charger.png';
+import cover from './Assets/Images/phoneAccessories/cover.png';
+import headphone from './Assets/Images/phoneAccessories/headphone.png';
+import screen from './Assets/Images/phoneAccessories/screen.png';
+import wireless from './Assets/Images/phoneAccessories/wireless.png';
+import powerBank from './Assets/Images/phoneAccessories/powerBank.png';
+//laptop utilities images
+import bag from './Assets/Images/pcAccesories/bag.png';
+import ethernet from './Assets/Images/pcAccesories/ethernet.png';
+import flash from './Assets/Images/pcAccesories/flash.png';
+import hdrive from './Assets/Images/pcAccesories/hdd.png';
+import hdmi from './Assets/Images/pcAccesories/hdmi.png';
+import router from './Assets/Images/pcAccesories/modem.png';
+import powerCord from './Assets/Images/pcAccesories/powerCord.png';
+import ssd from './Assets/Images/pcAccesories/ssd.png';
 
 class App extends Component {
 
@@ -149,6 +170,26 @@ class App extends Component {
               'Google/Samsung Nexus 10', 'Google/Asus Nexus 7 II']
     },
 
+    accessories: {
+      phone: {
+        charger: 'Charger',
+        cover: 'Cover',
+        headphone: 'Headphone',
+        screen: 'Screen',
+        wireless: 'Wireless Charger',
+        powerBank: 'Power Bank'
+      },
+
+      phoneImg: {
+        charger: charger,
+        cover: cover,
+        headphone: headphone,
+        screen: screen,
+        wireless: wireless,
+        powerBank: powerBank
+      }
+    },
+
     phoneLogo: {
       apple: apple,
       asus: asus,
@@ -202,31 +243,60 @@ class App extends Component {
       samsung: samsungTab
     },
 
-    laptopPic: {
-      battery: battery,
-      keyboard: keyboard,
-      laptop: laptop,
-      notebook: notebook,
-      power: power,
-      recovery: recovery,
-      touchpad: touchpad
-    },
+    
 
     laptop: {
-      battery: 'Battery Replacement',
-      keyboard: 'Keyboard Replacement',
-      laptop: 'Liquid Damage',
-      notebook: 'Screen Repair',
-      power: 'Charging Issue',
-      recovery: 'Data Recovery',
-      touchpad: 'Touchpad Repair'
+
+      title: {
+        battery: 'Battery Replacement',
+        keyboard: 'Keyboard Replacement',
+        laptop: 'Liquid Damage',
+        notebook: 'Screen Repair',
+        power: 'Charging Issue',
+        recovery: 'Data Recovery',
+        touchpad: 'Touchpad Repair'
+      },
+
+      brand: {
+        apple: 'Apple', acer: 'Acer', dell: 'Dell', hp: 'Hp', samsung: 'Samsung', sony: 'Sony'
+      },
+
+      logo: {
+        apple: macbook,
+        acer: acer,
+        dell: dell,
+        hp: hp,
+        samsung: samsungLaptop,
+        sony: sonylaptop
+      },
+
+      laptopPic: {
+        battery: battery,
+        keyboard: keyboard,
+        laptop: laptop,
+        notebook: notebook,
+        power: power,
+        recovery: recovery,
+        touchpad: touchpad
+      }
 
     },
 
+    laptopAccessoriesImg: {
+      bag: bag,
+      ethernet: ethernet,
+      flash: flash,
+      hdrive: hdrive,
+      hdmi: hdmi,
+      router: router,
+      powerCord: powerCord,
+      ssd: ssd
+    },
+
+
     pcCategory: {
-      desktop: 'Desktop',
       keyboard: 'Keyboard',
-      laptop: 'Laptop',
+      hdd: 'Hard Disk',
       monitor: 'Monitor',
       mouse: 'Mouse',
       utilities: 'Utilities',
@@ -235,9 +305,8 @@ class App extends Component {
     },
 
     pcImage: {
-      desktop: desktop,
       keyboard: Keyboard,
-      laptop: Laptop,
+      hdd: hdd,
       monitor: monitor,
       mouse: mouse,
       utilities: utilities,
@@ -279,7 +348,7 @@ class App extends Component {
                                                         backdrop={this.state.backDropValue}
                                                         toggleBackdrop={this.toggleBackdrop}
                                                         switch={this.state.sideBar}/>} />
-                                                        route for 
+
               <Route path="/phone/*" element={<PhoneMain switchBar={this.toggleSidebar} 
                                                         backdrop={this.state.backDropValue}
                                                         toggleBackdrop={this.toggleBackdrop}
@@ -318,9 +387,32 @@ class App extends Component {
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
                                                     device="laptop"
-                                                    data={this.state.laptop}
-                                                    img={this.state.laptopPic}/>} />
-                {Object.keys(this.state.brand).map(item => {
+                                                    data={this.state.laptop.title}
+                                                    img={this.state.laptop.laptopPic}/>} />
+
+                <Route path='/phone/phoneaccessories/*' element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.accessories.phone}
+                                                    img={this.state.accessories.phoneImg}
+                                                    device="phone"
+                                                    query="accessories"
+                                                    />}/>
+
+                {Object.keys(this.state.accessories.phone).map(item => {
+                  let dir = `/phone/phoneaccessories/${item}/inquiry`;
+                  return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                    key={item}
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    device="phone"
+                                                    query="accessories"
+                                                    img={this.state.accessories.phoneImg[item]} />}/>
+                })}
+
+                {Object.keys(this.state.brand).map((item, index) => {
                 let dir1 = `/phone/phonerepair/${item}`;
                 let dir2 = `/phone/phonerepair/${item}/service`;
                 return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
@@ -334,6 +426,7 @@ class App extends Component {
                                                     switch={this.state.sideBar}/>} 
                                                     />
                           <Route key={item} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                    key={index}
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -342,9 +435,10 @@ class App extends Component {
                                                     img={this.state.phonePic[item]} />} />
                                                     </>
                   })}              
-              {Object.keys(this.state.laptop).map(item => {
-                let dir = `/laptop/laptoprepair/${item}` ;
+              {Object.keys(this.state.laptop).map((item, index) => {
+                let dir = `/laptop/laptoprepair/${item}/inquiry` ;
                 return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                    key={index}
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -355,9 +449,11 @@ class App extends Component {
               
             
               
-              {Object.keys(this.state.tablet).map(item => {
+              {Object.keys(this.state.tablet).map((item, index) => {
                 let dir1 = `/tablet/tabletrepair/${item}`;
                 let dir2 = `/tablet/tabletrepair/${item}/service`;
+                let dir3 = `/tablet/tabletsale/${item}`;
+                let dir4 = `/tablet/tabletsale/${item}/inquiry`;
 
                 return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
                                                     key={item}
@@ -370,13 +466,32 @@ class App extends Component {
                                                     switch={this.state.sideBar}/>} 
                                                     />
                           
-                          <Route key={item} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
+                          <Route key={index += 1} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                    key={item}
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
                                                     device="tablet"
                                                     query="repair"
                                                     img={this.state.tabletPic[item]} />} />
+
+                          <Route key={index += 2} path={dir3} element={<ItemDetails key={index} 
+                                                    switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    product="tablet"
+                                                    device={item}
+                                                    query="sale" />}/>
+
+                          <Route key={index += 3} path={dir4} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                    key={item}
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    device="tablet"
+                                                    query="sale"
+                                                    img={this.state.tabletPic[item]} />}/>
                                                     </>
                 })}
 
@@ -388,12 +503,14 @@ class App extends Component {
                                                     switch={this.state.sideBar}
                                                     data={this.state.pcCategory}
                                                     img={this.state.pcImage}
-                                                    details={this.state.pcDetails}
-                                                    device="laptop"/>}/>
+                                                    device="laptop"
+                                                    query="accessories"
+                                                    />}/>
 
               {Object.keys(this.state.pcCategory).map((item, index) => {
                 let dir1 = `/laptop/laptopaccessories/${item}`;
                 let dir2 = `/laptop/laptopaccessories/${item}/inquiry`;
+                console.log(dir1)
                 return <> <Route key={index} path={dir1} element={<ItemDetails key={item} 
                                                     switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
@@ -408,8 +525,24 @@ class App extends Component {
                                                     switch={this.state.sideBar}
                                                     device="laptop"
                                                     query="accessories"
-                                                    img={this.state.laptopPic[item]} />}/>
+                                                    img={this.state.pcImage[item]}
+                                                    data={this.state.laptopAccessoriesImg}
+                                                     />}/>
                                                      </>
+              })}
+
+              {Object.keys(this.state.laptopAccessoriesImg).map((item, index) => {
+                let dir = `/laptop/laptopaccessories/utilities/${item}/inquiry`;
+                console.log(dir)
+                return <Route key={index} path={dir} element={<InquiryForm key={item} switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    device="laptop"
+                                                    query="accessories"
+                                                    img={this.state.laptopAccessoriesImg[item]}
+                                                    data={this.state.laptopAccessoriesImg}
+                                                     />}/>
               })}
 
                 <Route path ="/phone/phonesale/*" element={<PcMain switchBar={this.toggleSidebar} 
@@ -418,11 +551,46 @@ class App extends Component {
                                                     switch={this.state.sideBar}
                                                     data={this.state.brand}
                                                     img={this.state.phoneLogo}
-                                                    device="phone"/>}/>
+                                                    device="phone"
+                                                    query="sale"
+                                                    />}/>
+
+                <Route path ="/tablet/tabletsale/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.tablet}
+                                                    img={this.state.tabletLogo}
+                                                    device="tablet"
+                                                    query="sale"
+                                                    />}/>
+
+                <Route path ="/laptop/laptopsale/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.laptop.brand}
+                                                    img={this.state.laptop.logo}
+                                                    device="laptop"
+                                                    query="sale"
+                                                    />}/>
+
+                {Object.keys(this.state.laptop.brand).map((item, index) => {
+                  let dir = `/laptop/laptopsale/${item}`;
+
+                  return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
+                                                    key={item}
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    device="laptop"
+                                                    query="sale"
+                                                    img={this.state.laptop.logo[item]} />}/>
+                })}
 
               {Object.keys(this.state.brand).map((item, index) => {
                 let dir = `/phone/phonesale/${item}`;
-                return <Route key={item}path={dir} element={<ItemDetails key={index} 
+                return <Route key={item} path={dir} element={<ItemDetails key={index} 
                                                     switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
@@ -436,16 +604,13 @@ class App extends Component {
                 return this.state.brand[item].map(igKey => {
 
                   let dir = `/phone/phonesale/${item}/inquiry`;
-                  console.log(dir)
-                  return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
+                  return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
                                                       device="phone"
                                                       query="sale"
-                                                      img={this.state.phonePic[item]} />}/>
-
-                })
+                                                      img={this.state.phonePic[item]} />}/>})
               })}
 
               <Route path="/currency_converter" element={<CurrencyConverter switchBar={this.toggleSidebar} 
@@ -453,13 +618,6 @@ class App extends Component {
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}/>}/>
 
-              <Route path='/phoneaccessories' element={<PhoneAccessoriesMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.brand}
-                                                    img={this.state.phoneLogo}
-                                                    device="accessories"/>}/>
 
 
             </Routes>

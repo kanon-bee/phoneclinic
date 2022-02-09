@@ -7,7 +7,7 @@ import styles from './MainComponent.module.css';
 import RepairConsole from "./RepairConsole/RepairConsole";
 import GetAquote from "../../../Extra/GetAqoute/GetAquote";
 import bgPhone from '../../../Assets/Images/phoneRepair/phoneRepair.jpg';
-import bgTablet from '../../../Assets/Images/tabletRepair/ipad.jpg';
+import bgTablet from '../../../Assets/Images/tabletRepair/ipad.png';
 import bgLaptop from '../../../Assets/Images/macbook.jpg';
 
 

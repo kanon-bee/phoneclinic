@@ -30,19 +30,36 @@ class ItemListings extends Component {
         
         const itemPerpage = 3;
         pageVisited = this.state.pageNumber * itemPerpage;
-        displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
-            let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/inquiry`
-            console.log(item);
-            return <div key={item} className={styles.Items}>
-                <Link to={dir}>
-                    <img src={product[item]['img']} alt={item}/>
-                    <div className={styles.Details}>
-                        <h3>{product[item]['details']}</h3>
-                    </div>
-                </Link>
-            </div>
-        });
-        console.log(displayItem);
+
+        if (this.props.device === 'utilities') {
+            displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
+                let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/${item}/inquiry`
+                console.log(dir);
+                return <div key={item} className={styles.Items}>
+                    <Link to={dir}>
+                        <img src={product[item]['img']} alt={item}/>
+                        <div className={styles.Details}>
+                            <h3>{product[item]['details']}</h3>
+                        </div>
+                    </Link>
+                </div>
+            });
+        }
+        else{
+            
+            displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
+                let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/inquiry`
+                console.log(dir);
+                return <div key={item} className={styles.Items}>
+                    <Link to={dir}>
+                        <img src={product[item]['img']} alt={item}/>
+                        <div className={styles.Details}>
+                            <h3>{product[item]['details']}</h3>
+                        </div>
+                    </Link>
+                </div>
+            });
+        }
 
         const pageCount = Math.ceil(Object.keys(product).length / itemPerpage)
 

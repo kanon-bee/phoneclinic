@@ -30,7 +30,7 @@
 
 .Items img {
     height: 200px;
-    width: 250px;
+    width: 200px;
 }
 
 .Empty {
@@ -42,7 +42,6 @@
 .Details {
     width: 250px;
     margin: 0 auto;
-    height: 165px;
     font-family: 'PT Sans', sans-serif;
 }
 
