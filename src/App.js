@@ -49,7 +49,6 @@ import samsungTab from './Assets/Images/tabletRepair/samsung.png';
 //Laptop Service Image
 import battery from './Assets/Images/Logo/Laptop/battery.png';
 import keyboard from './Assets/Images/Logo/Laptop/keyboard.png';
-import laptop from './Assets/Images/Logo/Laptop/laptop.png';
 import notebook from './Assets/Images/Logo/Laptop/notebook.png';
 import power from './Assets/Images/Logo/Laptop/power.png';
 import recovery from './Assets/Images/Logo/Laptop/recovery.png';
@@ -92,6 +91,13 @@ import hdmi from './Assets/Images/pcAccesories/hdmi.png';
 import router from './Assets/Images/pcAccesories/modem.png';
 import powerCord from './Assets/Images/pcAccesories/powerCord.png';
 import ssd from './Assets/Images/pcAccesories/ssd.png';
+//tablet accessories
+import tabletCover from './Assets/Images/tablet/accessories/cover.png';
+import btKeyboard from './Assets/Images/tablet/accessories/keyboard.png';
+import protector from './Assets/Images/tablet/accessories/protector.png';
+import btSpeaker from './Assets/Images/tablet/accessories/speaker.png';
+import stand from './Assets/Images/tablet/accessories/stand.png';
+
 
 class App extends Component {
 
@@ -187,6 +193,24 @@ class App extends Component {
         screen: screen,
         wireless: wireless,
         powerBank: powerBank
+      },
+
+      tablet: {
+        cover: 'Cover',
+        keyboard: 'Keyboard',
+        screenProtector: 'Screen Protector',
+        speaker: 'Speaker',
+        stand: 'Tablet Stand',
+        headphone: 'Headphone'
+      },
+
+      tabletImg: {
+        cover: tabletCover,
+        keyboard: btKeyboard,
+        screenProtector: protector,
+        speaker: btSpeaker,
+        stand: stand,
+        headphone: headphone
       }
     },
 
@@ -250,10 +274,9 @@ class App extends Component {
       title: {
         battery: 'Battery Replacement',
         keyboard: 'Keyboard Replacement',
-        laptop: 'Liquid Damage',
-        notebook: 'Screen Repair',
-        power: 'Charging Issue',
-        recovery: 'Data Recovery',
+        screenRepair: 'Screen Repair',
+        powerIssue: 'Charging Issue',
+        dataRecovery: 'Data Recovery',
         touchpad: 'Touchpad Repair'
       },
 
@@ -273,10 +296,9 @@ class App extends Component {
       laptopPic: {
         battery: battery,
         keyboard: keyboard,
-        laptop: laptop,
-        notebook: notebook,
-        power: power,
-        recovery: recovery,
+        screenRepair: notebook,
+        powerIssue: power,
+        dataRecovery: recovery,
         touchpad: touchpad
       }
 
@@ -435,8 +457,8 @@ class App extends Component {
                                                     img={this.state.phonePic[item]} />} />
                                                     </>
                   })}              
-              {Object.keys(this.state.laptop).map((item, index) => {
-                let dir = `/laptop/laptoprepair/${item}/inquiry` ;
+              {Object.keys(this.state.laptop.title).map((item, index) => {
+                let dir = `/laptop/laptoprepair/${item}/service`;
                 return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
                                                     key={index}
                                                     backdrop={this.state.backDropValue}
@@ -444,7 +466,7 @@ class App extends Component {
                                                     switch={this.state.sideBar}
                                                     device="laptop"
                                                     query="repair"
-                                                    img={bgLaptop} />} />
+                                                    img={this.state.laptop.laptopPic[item]} />} />
                 })}
               
             
@@ -507,10 +529,31 @@ class App extends Component {
                                                     query="accessories"
                                                     />}/>
 
+              <Route path='/tablet/tabletaccessories/*' element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.accessories.tablet}
+                                                    img={this.state.accessories.tabletImg}
+                                                    device="tablet"
+                                                    query="accessories"
+                                                    />}/>
+
+              {Object.keys(this.state.accessories.tablet).map((item, index) => {
+                let dir = `/tablet/tabletaccessories/${item}/inquiry`;
+                return <Route key={item} path={dir} element={<InquiryForm key={index} switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    device="tablet"
+                                                    query="accessories"
+                                                    img={this.state.accessories.tabletImg[item]}
+                                                     />}/>
+              })}
+
               {Object.keys(this.state.pcCategory).map((item, index) => {
                 let dir1 = `/laptop/laptopaccessories/${item}`;
                 let dir2 = `/laptop/laptopaccessories/${item}/inquiry`;
-                console.log(dir1)
                 return <> <Route key={index} path={dir1} element={<ItemDetails key={item} 
                                                     switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
@@ -526,14 +569,13 @@ class App extends Component {
                                                     device="laptop"
                                                     query="accessories"
                                                     img={this.state.pcImage[item]}
-                                                    data={this.state.laptopAccessoriesImg}
+                                                    // data={this.state.laptopAccessoriesImg}
                                                      />}/>
                                                      </>
               })}
 
               {Object.keys(this.state.laptopAccessoriesImg).map((item, index) => {
                 let dir = `/laptop/laptopaccessories/utilities/${item}/inquiry`;
-                console.log(dir)
                 return <Route key={index} path={dir} element={<InquiryForm key={item} switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}

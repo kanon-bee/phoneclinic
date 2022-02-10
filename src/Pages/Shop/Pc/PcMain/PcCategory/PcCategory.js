@@ -22,7 +22,20 @@ class PcCategory extends Component {
                 </Link>
             })
         }
-        else if(this.props.device === 'tablet') {
+
+        else if (this.props.device === 'laptop' && this.props.query === 'sale') {
+            item = Object.keys(this.props.data).map((item, index) => {
+                dir = `/laptop/laptopsale/${item}`
+                return <Link key={index} to={dir}>
+                    <PcItems key={item} 
+                            img={this.props.img[item]} 
+                            items={item}
+                            device={this.props.device} />
+                </Link>
+            })
+        }
+
+        else if(this.props.device === 'tablet' && this.props.query === 'sale') {
             item = Object.keys(this.props.data).map((item, index) => {
                 dir = `/tablet/tabletsale/${item}`;
                 return <Link key={index} to={dir}>
@@ -32,10 +45,21 @@ class PcCategory extends Component {
                 </Link>
             })
         }
-        if (this.props.device === 'phone' && this.props.query === 'accessories') {
+        else if(this.props.device === 'tablet' && this.props.query === 'accessories') {
+            item = Object.keys(this.props.data).map((item, index) => {
+                dir = `/tablet/tabletaccessories/${item}/inquiry`;
+                console.log(dir);
+                return <Link key={index} to={dir}>
+                    <PcItems key={item} img={this.props.img[item]} 
+                                    items={item} 
+                                    data={this.props.data}/>
+                </Link>
+            })
+        }
+
+        else if (this.props.device === 'phone' && this.props.query === 'accessories') {
             item = Object.keys(this.props.data).map((item, index) => {
                 dir = `/${this.props.device}/${this.props.device}${this.props.query}/${item}/inquiry`;
-                console.log(dir)
                 return <Link key={index} to={dir}>
                     <PcItems key={item} 
                             img={this.props.img[item]} 
@@ -47,7 +71,6 @@ class PcCategory extends Component {
         else if (this.props.device === 'phone' && this.props.query === 'sale') {
             item = Object.keys(this.props.data).map((item, index) => {
                 dir = `/${this.props.device}/${this.props.device}${this.props.query}/${item}/inquiry`;
-                console.log(dir)
                 return <Link key={index} to={dir}>
                     <PcItems key={item} 
                             img={this.props.img[item]} 
@@ -56,18 +79,7 @@ class PcCategory extends Component {
                 </Link>
             })
         }
-        if (this.props.device === 'laptop' && this.props.query === 'sale') {
-            item = Object.keys(this.props.data).map((item, index) => {
-                console.log(item)
-                dir = `/laptop/laptopsale/${item}`
-                return <Link key={index} to={dir}>
-                    <PcItems key={item} 
-                            img={this.props.img[item]} 
-                            items={item}
-                            device={this.props.device} />
-                </Link>
-            })
-        }
+        
 
         
         

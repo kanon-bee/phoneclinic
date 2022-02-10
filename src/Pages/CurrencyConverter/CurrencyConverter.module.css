@@ -5,10 +5,8 @@
     width: 100%;
     margin: 20px auto;
     height: 630px;
-    /* padding: 10px; */
     display: flex;
     justify-content: right;
-    background-color: #97e5ef;
     font-family: 'PT Serif', serif;
     background-image: url('../../Assets/Images/bg7.jpg');
     background-position: center;

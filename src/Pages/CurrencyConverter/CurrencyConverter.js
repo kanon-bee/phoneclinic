@@ -28,7 +28,7 @@ const data=  {
     BGN: 'Bulgaria Lev',
     BHD: 'Bahrain Dinar',
     BIF: 'Burundi Franc',
-    BMD: 'Bermuda Dollar',
+    BIH: 'Bosnia-Herzegovina',
     BND: 'Brunei Darussalam Dollar',
     BOB: 'Bolivia Bolíviano',
     BRL: 'Brazil Real',
@@ -58,6 +58,7 @@ const data=  {
     EGP: 'Egypt Pound',
     ERN: 'Eritrea Nakfa',
     ETB: 'Ethiopia Birr',
+    ETH: 'Ethereum',
     EUR: 'Euro Member Countries',
     FJD: 'Fiji Dollar',
     FKP: 'Falkland Islands (Malvinas) Pound',
@@ -72,7 +73,7 @@ const data=  {
     GYD: 'Guyana Dollar',
     HKD: 'Hong Kong Dollar',
     HNL: 'Honduras Lempira',
-    HRK: 'Croatia Kuna',
+    HRV: 'Ukrainian hryvnia',
     HTG: 'Haiti Gourde',
     HUF: 'Hungary Forint',
     IDR: 'Indonesia Rupiah',
@@ -100,7 +101,7 @@ const data=  {
     LKR: 'Sri Lanka Rupee',
     LRD: 'Liberia Dollar',
     LSL: 'Lesotho Loti',
-    LTL: 'Lithunian Litas',
+    LTC: 'Litecoin',
     LVL: 'Latvian Lats',
     LYD: 'Libya Dinar',
     MAD: 'Morocco Dirham',
@@ -148,6 +149,7 @@ const data=  {
     SOS: 'Somalia Shilling',
     SPL: 'Seborga Luigino',
     SRD: 'Suriname Dollar',
+    SSP: 'South Sudanese pound',
     STD: 'São Tomé and Príncipe dobra',
     STN: 'São Tomé and Príncipe Dobra',
     SVC: 'El Salvador Colon',
@@ -165,6 +167,7 @@ const data=  {
     TZS: 'Tanzania Shilling',
     UAH: 'Ukraine Hryvnia',
     UGX: 'Uganda Shilling',
+    URY: 'Peso Uruguayo',
     USD: 'United States Dollar',
     UYU: 'Uruguay Peso',
     UZS: 'Uzbekistan Som',
@@ -179,6 +182,7 @@ const data=  {
     XDR: 'IMF Special Drawing Rights',
     XOF: 'West African CFA Franc',
     XPF: 'Comptoirs Français du Pacifique',
+    XRP: 'Ripple',
     YER: 'Yemen Rial',
     ZAR: 'South Africa Rand',
     ZMK: 'Zambian kwacha',
@@ -228,8 +232,12 @@ class CurrencyConverter extends Component {
 
         console.log(this.state.rate);
 
+        // const test = ['a', 'h', 'e', 'f'];
+
+        // console.log(test.sort());
+
         
-        const option = Object.keys(this.state.rate).map(item => {
+        const option = Object.keys(this.state.rate).sort().map(item => {
             return <option key={item} value={item}>{data[item]}</option>
         })
         

@@ -17,9 +17,9 @@ class RepairItem extends Component {
             dir = `/tablet/tabletrepair/${this.props.model}`;
         }
         else if (this.props.device === "laptop"){
-            dir = `/laptop/laptoprepair/${this.props.dir}`;
+            dir = `/laptop/laptoprepair/${this.props.dir}/service`;
         }
-        console.log(this.props.device);
+        console.log(dir);
     
 
         return (
