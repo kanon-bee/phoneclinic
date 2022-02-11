@@ -29,9 +29,9 @@ const PhoneMain = (props) => {
     let fontIconHeaderSale = null;
     let fontIconHeaderParts = null;
     let backgroundPic = null;
-    let dir1 = `/${props.device}/${props.device}repair`;
-    let dir2 = `/${props.device}/${props.device}sale`;
-    let dir3 = `/${props.device}/${props.device}accessories`;
+    let dir1 = `/repair/${props.device}`;
+    let dir2 = `/sale/${props.device}`;
+    let dir3 = `/accessories/${props.device}`;
 
     if (props.device === 'phone') {
         buyDeviceHeader = <h2>Or Buy Phones</h2>;

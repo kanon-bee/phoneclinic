@@ -29,7 +29,7 @@
     font-weight: 800;
 }
 
-.HeaderIntro1 p {
+.para {
     color: #BBBBBB;
     text-transform: uppercase;
     height:40px;
@@ -41,19 +41,28 @@
     font-weight: 700;
 }
 
-.HeaderIntro1 button {
+.btn {
     height: 50px;
-    width: 213px;
+    width: 225px;
     border-radius: 20px;
     border: 1px solid transparent;
-    background-color: #edecec;
-    text-transform: uppercase;
+    background-color: #bbbbbbc4;
     cursor: pointer;
     animation: btn 2s ease-out forwards;
+    text-decoration: none;
 }
 
-.HeaderIntro1 button:hover {
+.btn p {
+    color: #646464;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.btn:hover {
     background-color: white;
+}
+
+.btn:hover > p{
+    color: black;
 }
 
 @keyframes head1 {
@@ -137,7 +146,7 @@
         font-size: 12px;
     }
 
-    .HeaderIntro1 button {
+    .btn {
         height: 43px;
         width: 155px;
         font-size: 11px;

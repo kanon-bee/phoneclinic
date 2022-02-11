@@ -32,7 +32,7 @@ class PhoneModels extends Component {
         const mobile = Object.keys(this.props.data).map(item => {
             return item === this.props.model ?
                 this.props.data[item].map((igkey, index) => {
-                    let dir = `/${this.props.device}/${this.props.device}repair/${item}/service`;                    
+                    let dir = `/repair/${this.props.device}/${item}/service`;                    
                     return <Link key={index} to={dir}>
                             <PhoneModel key={igkey} device={igkey} />
                         </Link>

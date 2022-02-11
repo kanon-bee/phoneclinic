@@ -3,7 +3,7 @@
     /* margin-top: 10px; */
 }
 
-.NavigationItems ul {
+.ItemsLink {
     width: 100%;
     display: flex;
     justify-content: space-around;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import styles from './phoneRepair.module.css';
+import styles from './RepairItem.module.css';
 import Aux from "../../../../Hoc/Aux/Aux";
 
 
@@ -11,13 +11,13 @@ class RepairItem extends Component {
         
         let dir = null;
         if (this.props.device === "phone"){
-            dir = `/phone/phonerepair/${this.props.model}`;
+            dir = `/repair/phone/${this.props.model}`;
         }
         else if (this.props.device === "tablet"){
-            dir = `/tablet/tabletrepair/${this.props.model}`;
+            dir = `/repair/tablet/${this.props.model}`;
         }
         else if (this.props.device === "laptop"){
-            dir = `/laptop/laptoprepair/${this.props.dir}/service`;
+            dir = `/repair/laptop/${this.props.dir}/service`;
         }
         console.log(dir);
     

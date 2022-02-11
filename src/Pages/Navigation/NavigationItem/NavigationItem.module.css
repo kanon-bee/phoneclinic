@@ -5,6 +5,7 @@
     list-style: none;
     font-family: 'Island Moments', cursive;
     font-family: 'PT Serif', serif;
+    position: relative;
 }
 
 .NavigationItem a {
@@ -28,3 +29,39 @@
     border-bottom: 2px solid #334257;
 }
 
+.nestedLink {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -63px;
+    z-index: 200;
+    background-color: aliceblue;
+    flex-flow: column;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.nestedLink a {
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.NavigationItem:hover > .nestedLink {
+    display: flex;
+}
+
+.NavigationItem:hover > .nestedLink a {
+    padding: 0px;
+}
+
+@media (max-width: 767px) {
+    .nestedLink {
+        top: -70px;
+        left: -180px;
+    }   
+}

@@ -31,9 +31,9 @@ class ItemListings extends Component {
         const itemPerpage = 3;
         pageVisited = this.state.pageNumber * itemPerpage;
 
-        if (this.props.device === 'utilities') {
+        if (this.props.query === 'accessories') {
             displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
-                let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/${item}/inquiry`
+                let dir = `/${this.props.query}/${this.props.route}/${this.props.device}/inquiry`
                 console.log(dir);
                 return <div key={item} className={styles.Items}>
                     <Link to={dir}>
@@ -48,7 +48,7 @@ class ItemListings extends Component {
         else{
             
             displayItem = Object.keys(product).slice(pageVisited, pageVisited+itemPerpage).map(item => {
-                let dir = `/${this.props.route}/${this.props.route}${this.props.query}/${this.props.device}/inquiry`
+                let dir = `/sale/${this.props.route}/${this.props.device}/inquiry`
                 console.log(dir);
                 return <div key={item} className={styles.Items}>
                     <Link to={dir}>

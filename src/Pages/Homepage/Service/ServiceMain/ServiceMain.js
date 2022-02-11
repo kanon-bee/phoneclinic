@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './ServiceMain.module.css';
 import Services from '../Services/Services';
-import repair from '../../../../Assets/Images/repair.png';
-import phone from '../../../../Assets/Images/phone.jpg';
-import transfer from '../../../../Assets/Images/money.png';
-import cafe from '../../../../Assets/Images/cafe.png';
-import accesories from '../../../../Assets/Images/accesories.png';
-import electronics from '../../../../Assets/Images/electronics.png';
-import tablet from '../../../../Assets/Images/tablet.jpg';
-import laptop from '../../../../Assets/Images/laptop.jpg'
+import phone from '../../../../Assets/Images/others/phone.png';
+import transfer from '../../../../Assets/Images/others/moneyTransfer.png';
+import cafe from '../../../../Assets/Images/others/cafe.png';
+import tablet from '../../../../Assets/Images/others/tablet.png';
+import laptop from '../../../../Assets/Images/others/laptop.png'
 import { Link } from 'react-router-dom';
 
 
@@ -36,7 +33,9 @@ const ServiceMain = () => (
                 <Services img={transfer} title='Money Transfer'/>
             </Link>
 
-            <Services img={cafe} title='Cyber Cafe'/>
+            <Link to="/cybercafe/*">
+                <Services img={cafe} title='Cyber Cafe'/>
+            </Link>
 
         </div>
 

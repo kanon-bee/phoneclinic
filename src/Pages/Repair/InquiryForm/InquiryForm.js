@@ -7,10 +7,10 @@ import SideDrawer from '../../Sidedrawer/Sidedrawer';
 import FooterMain from '../../Footer/FooterMain/FooterMain';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileSignature, faPhoneAlt, faStore } from '@fortawesome/free-solid-svg-icons';
-import bgPhone from '../../../Assets/Images/phoneRepair.png';
-import bgTablet from '../../../Assets/Images/tabletRepair.png'
-import bgLaptop from '../../../Assets/Images/laptopRepair.png';
-import accessories from '../../../Assets/Images/accessories.jpg';
+// import bgPhone from '../../../Assets/Images/phoneRepair.png';
+// import bgTablet from '../../../Assets/Images/tabletRepair.png'
+// import bgLaptop from '../../../Assets/Images/laptopRepair.png';
+// import accessories from '../../../Assets/Images/accessories.jpg';
 import banner from '../../../Assets/Images/banner.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
@@ -116,8 +116,12 @@ const InquiryForm = (props) => {
 
     return (
         <Aux>
-            <Toolbar />
-            <SideDrawer />
+            <Toolbar switchBar={props.switchBar}/>
+        
+            <SideDrawer backdrop={props.backdrop} 
+                        toggleBackdrop={props.toggleBackdrop}
+                        switch={props.switch} />
+                        
             <div className={styles.Img}> 
                 <div data-aos="fade-down-right" data-aos-easing="ease-out-cubic" className={styles.Subimg}>
                     <img src={props.img}/>

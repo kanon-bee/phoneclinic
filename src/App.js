@@ -20,7 +20,7 @@ import oneplus from './Assets/Images/Logo/mobile/oneplus.png';
 import pixel from './Assets/Images/Logo/mobile/pixel.png';
 import samsung from './Assets/Images/Logo/mobile/samsung.png';
 import sony from './Assets/Images/Logo/mobile/sony.png';
-import google from './Assets/Images/Logo/tablet/google.jpeg';
+import google from './Assets/Images/Logo/tablet/google.png';
 import lenovo from './Assets/Images/Logo/tablet/lenovo.png';
 import microsoft from './Assets/Images/Logo/tablet/microsoft.png';
 import amazon from './Assets/Images/Logo/tablet/amazon.png';
@@ -97,6 +97,7 @@ import btKeyboard from './Assets/Images/tablet/accessories/keyboard.png';
 import protector from './Assets/Images/tablet/accessories/protector.png';
 import btSpeaker from './Assets/Images/tablet/accessories/speaker.png';
 import stand from './Assets/Images/tablet/accessories/stand.png';
+import CyberCafe from './Pages/Shop/CyberCafe/CyberCafe';
 
 
 class App extends Component {
@@ -389,7 +390,7 @@ class App extends Component {
                                                         switch={this.state.sideBar}
                                                         device="laptop"
                                                         />}/>         
-              <Route path="phone/phonerepair/*" element={<MainComponent switchBar={this.toggleSidebar} 
+              <Route path="/repair/phone/*" element={<MainComponent switchBar={this.toggleSidebar} 
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
@@ -397,14 +398,14 @@ class App extends Component {
                                                       data={this.state.brand}
                                                       img={this.state.phoneLogo}
                                                       />} />
-                <Route path="/tablet/tabletrepair/*" element={<MainComponent switchBar={this.toggleSidebar} 
+                <Route path="/repair/tablet/*" element={<MainComponent switchBar={this.toggleSidebar} 
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
                                                       device="tablet"
                                                       data={this.state.tablet}
                                                       img={this.state.tabletLogo}/>} />
-                <Route path="/laptop/laptoprepair/*" element={<MainComponent switchBar={this.toggleSidebar}
+                <Route path="/repair/laptop/*" element={<MainComponent switchBar={this.toggleSidebar}
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -412,7 +413,7 @@ class App extends Component {
                                                     data={this.state.laptop.title}
                                                     img={this.state.laptop.laptopPic}/>} />
 
-                <Route path='/phone/phoneaccessories/*' element={<PcMain switchBar={this.toggleSidebar} 
+                <Route path='/accessories/phone/*' element={<PcMain switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -422,8 +423,28 @@ class App extends Component {
                                                     query="accessories"
                                                     />}/>
 
+                <Route path ="/accessories/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.pcCategory}
+                                                    img={this.state.pcImage}
+                                                    device="laptop"
+                                                    query="accessories"
+                                                    />}/>
+
+                <Route path='/accessories/tablet/*' element={<PcMain switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}
+                                                    data={this.state.accessories.tablet}
+                                                    img={this.state.accessories.tabletImg}
+                                                    device="tablet"
+                                                    query="accessories"
+                                                    />}/>
+
                 {Object.keys(this.state.accessories.phone).map(item => {
-                  let dir = `/phone/phoneaccessories/${item}/inquiry`;
+                  let dir = `/accessories/phone/${item}/inquiry`;
                   return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
                                                     key={item}
                                                     backdrop={this.state.backDropValue}
@@ -435,8 +456,8 @@ class App extends Component {
                 })}
 
                 {Object.keys(this.state.brand).map((item, index) => {
-                let dir1 = `/phone/phonerepair/${item}`;
-                let dir2 = `/phone/phonerepair/${item}/service`;
+                let dir1 = `/repair/phone/${item}`;
+                let dir2 = `/repair/phone/${item}/service`;
                 return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
                                                     key={item}
                                                     pic={this.state.phonePic}
@@ -458,7 +479,7 @@ class App extends Component {
                                                     </>
                   })}              
               {Object.keys(this.state.laptop.title).map((item, index) => {
-                let dir = `/laptop/laptoprepair/${item}/service`;
+                let dir = `/repair/laptop/${item}/service`;
                 return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
                                                     key={index}
                                                     backdrop={this.state.backDropValue}
@@ -472,10 +493,10 @@ class App extends Component {
             
               
               {Object.keys(this.state.tablet).map((item, index) => {
-                let dir1 = `/tablet/tabletrepair/${item}`;
-                let dir2 = `/tablet/tabletrepair/${item}/service`;
-                let dir3 = `/tablet/tabletsale/${item}`;
-                let dir4 = `/tablet/tabletsale/${item}/inquiry`;
+                let dir1 = `/repair/tablet/${item}`;
+                let dir2 = `/repair/tablet/${item}/service`;
+                let dir3 = `/sale/tablet/${item}`;
+                let dir4 = `/sale/tablet/${item}/inquiry`;
 
                 return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
                                                     key={item}
@@ -519,28 +540,10 @@ class App extends Component {
 
               
 
-              <Route path ="/laptop/laptopaccessories/*" element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.pcCategory}
-                                                    img={this.state.pcImage}
-                                                    device="laptop"
-                                                    query="accessories"
-                                                    />}/>
-
-              <Route path='/tablet/tabletaccessories/*' element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.accessories.tablet}
-                                                    img={this.state.accessories.tabletImg}
-                                                    device="tablet"
-                                                    query="accessories"
-                                                    />}/>
+              
 
               {Object.keys(this.state.accessories.tablet).map((item, index) => {
-                let dir = `/tablet/tabletaccessories/${item}/inquiry`;
+                let dir = `/accessories/tablet/${item}/inquiry`;
                 return <Route key={item} path={dir} element={<InquiryForm key={index} switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
@@ -552,8 +555,8 @@ class App extends Component {
               })}
 
               {Object.keys(this.state.pcCategory).map((item, index) => {
-                let dir1 = `/laptop/laptopaccessories/${item}`;
-                let dir2 = `/laptop/laptopaccessories/${item}/inquiry`;
+                let dir1 = `/accessories/laptop/${item}`;
+                let dir2 = `/accessories/laptop/${item}/inquiry`;
                 return <> <Route key={index} path={dir1} element={<ItemDetails key={item} 
                                                     switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
@@ -575,7 +578,7 @@ class App extends Component {
               })}
 
               {Object.keys(this.state.laptopAccessoriesImg).map((item, index) => {
-                let dir = `/laptop/laptopaccessories/utilities/${item}/inquiry`;
+                let dir = `/accessories/laptop/utilities/${item}/inquiry`;
                 return <Route key={index} path={dir} element={<InquiryForm key={item} switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
@@ -587,7 +590,7 @@ class App extends Component {
                                                      />}/>
               })}
 
-                <Route path ="/phone/phonesale/*" element={<PcMain switchBar={this.toggleSidebar} 
+                <Route path ="/sale/phone/*" element={<PcMain switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -597,7 +600,7 @@ class App extends Component {
                                                     query="sale"
                                                     />}/>
 
-                <Route path ="/tablet/tabletsale/*" element={<PcMain switchBar={this.toggleSidebar} 
+                <Route path ="/sale/tablet/*" element={<PcMain switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -607,7 +610,7 @@ class App extends Component {
                                                     query="sale"
                                                     />}/>
 
-                <Route path ="/laptop/laptopsale/*" element={<PcMain switchBar={this.toggleSidebar} 
+                <Route path ="/sale/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}
@@ -618,7 +621,7 @@ class App extends Component {
                                                     />}/>
 
                 {Object.keys(this.state.laptop.brand).map((item, index) => {
-                  let dir = `/laptop/laptopsale/${item}`;
+                  let dir = `/sale/laptop/${item}`;
 
                   return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
                                                     key={item}
@@ -631,7 +634,7 @@ class App extends Component {
                 })}
 
               {Object.keys(this.state.brand).map((item, index) => {
-                let dir = `/phone/phonesale/${item}`;
+                let dir = `/sale/phone/${item}`;
                 return <Route key={item} path={dir} element={<ItemDetails key={index} 
                                                     switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
@@ -645,7 +648,7 @@ class App extends Component {
               {Object.keys(this.state.brand).map((item, index) => {
                 return this.state.brand[item].map(igKey => {
 
-                  let dir = `/phone/phonesale/${item}/inquiry`;
+                  let dir = `/sale/phone/${item}/inquiry`;
                   return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
@@ -656,6 +659,11 @@ class App extends Component {
               })}
 
               <Route path="/currency_converter" element={<CurrencyConverter switchBar={this.toggleSidebar} 
+                                                    backdrop={this.state.backDropValue}
+                                                    toggleBackdrop={this.toggleBackdrop}
+                                                    switch={this.state.sideBar}/>}/>
+
+              <Route path='/cybercafe/*' element={<CyberCafe switchBar={this.toggleSidebar} 
                                                     backdrop={this.state.backDropValue}
                                                     toggleBackdrop={this.toggleBackdrop}
                                                     switch={this.state.sideBar}/>}/>

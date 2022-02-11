@@ -1,5 +1,5 @@
 .Services {
-    height: 140px;
+    height: 200px;
     width: 250px;
     display: flex;
     flex-flow: column;
@@ -7,25 +7,24 @@
 }
 
 .Services span {
-    height: 155px;
-    width: 150px;
+    height: 200px;
+    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: auto;
     cursor: pointer;
     text-decoration: none;
 }
 
 .Services img {
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
+    height: 100px;
+    width: 90px;
 }
 
 .Services p{
-    color: #B1D0E0;
+    color: #32373ae0;
 }
 
 .Services span:hover {
@@ -34,13 +33,26 @@
     opacity: 0.9;
     border-radius: 20px;
     box-shadow: 0px 1px 20px 10px rgb(247 246 245);
+    /* transform: scale(1.2); */
+    animation: zoom 0.8s ease-out forwards;
 }
 
 .Services span:hover > p {
     color: rgb(61, 58, 58);
 }
 
-@media (max-width: 768px) {
+
+@keyframes zoom {
+    /* 0% {
+        transform: scale(0);
+    } */
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* @media (max-width: 768px) {
     .Services {
         height: 134px;
         width: 134px;
@@ -74,4 +86,4 @@
         width: 80px;
         height: 80px;
     }
-}
+} */

@@ -2,22 +2,35 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Sans&family=Luxurious+Roman&family=Open+Sans:wght@300&family=PT+Serif&family=Permanent+Marker&family=Playball&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap'); */
 
 .Main {
-    height: 450px;
-    width: 100%;
+    width: 95%;
     margin: 50px auto;
-    /* background-image: url(../../../Assets/Images/phoneRepair.jpg); */
-    background-position: top;
-    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.MainImg {
+    width: 45%;
+    margin: 0 auto;
+    font-family: 'PT Serif', serif;
+    padding: 8px;
+}
+
+.MainImg img {
+    width: 70%;
+}
+
+.MainPara {
+    width: 45%;
+    margin: 0 auto;
+    font-family: 'PT Serif', serif;
+    padding: 8px;
+    color: #30475E;
 }
 
 .Main h2 {
-    font-size: 50px;
-    position: absolute;
-    top: 229px;
-    left: 170px;
-    color: #EEEEEE;
-    font-family: 'Amatic SC', cursive;
-    font-family: 'Luxurious Roman', cursive;
+    font-size: 30px;
+    text-transform: capitalize;
 }
 
 .Para {
@@ -25,6 +38,7 @@
     margin: 30px auto;
     font-size: 18px;
     font-family: 'PT Serif', serif;
+    line-height: 30px;
 }
 
 .Para p {
@@ -41,9 +55,12 @@
 }
 
 
-@media (max-width:865px) {
-    .Main h2 {
-        left: 45px;
-        font-size: 40px;
+@media (max-width: 486px) {
+    .MainImg {
+        display: none;
+    }
+
+    .MainPara {
+        width: 70%;
     }
 }

@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #09080d;
+    background-color: #161853;
     overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .Heading {
-    color: white;
+    /* color: white; */
     height: 250px;
     width: 44%;
     display: flex;
@@ -31,7 +31,7 @@
 }
 
 .Heading h1 {
-    color: #B4A5A5;
+    color: #FAEDF0;
 }
 
 .Heading h2 {
@@ -106,13 +106,11 @@
 }
 
 @media (max-width: 799px) {
+    .Main {
+        height: 350px;
+    }
     .Heading {
-        background-image: url('../../../Assets/Images/phoneMain2.jpg');
-        background-position: center;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        padding: 10px;
+        width: 80%;
     }
 
     .Img {

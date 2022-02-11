@@ -6,9 +6,9 @@ import FooterMain from "../../Footer/FooterMain/FooterMain";
 import styles from './MainComponent.module.css';
 import RepairConsole from "./RepairConsole/RepairConsole";
 import GetAquote from "../../../Extra/GetAqoute/GetAquote";
-import bgPhone from '../../../Assets/Images/phoneRepair/phoneRepair.jpg';
-import bgTablet from '../../../Assets/Images/tabletRepair/ipad.png';
-import bgLaptop from '../../../Assets/Images/macbook.jpg';
+import bgPhone from '../../../Assets/Images/others/phone.png';
+import bgTablet from '../../../Assets/Images/others/tablet.png';
+import bgLaptop from '../../../Assets/Images/others/laptop.png';
 
 
 class MainComponent extends Component {
@@ -46,8 +46,15 @@ class MainComponent extends Component {
                 <SideDrawer backdrop={this.props.backdrop} 
                             toggleBackdrop={this.props.toggleBackdrop}
                             switch={this.props.switch} />
-                <div style={{backgroundImage: `url(${backgound})`}} className={styles.Main}>
-                    <h2>{this.props.device} Repair</h2>
+                <div className={styles.Main}>
+                    <div className={styles.MainImg}>
+                        <img src={backgound} alt={backgound} />
+                    </div>
+
+                    <div className={styles.MainPara}>
+                        <h2>{this.props.device} Repair</h2>
+                        <h4>Please Start by Choosing you Device</h4>
+                    </div>
                 </div>
     
                 <div className={styles.Para}>

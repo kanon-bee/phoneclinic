@@ -6,12 +6,12 @@ import 'aos/dist/aos.css';
 
 const Services = (props) => {
 
-    useEffect(() => {
-        aos.init({duration: 1500});
-    }, [])
+    // useEffect(() => {
+    //     // aos.init({duration: 2000});
+    // }, [])
 
     return (
-        <div  data-aos="fade-down-left" data-aos-easing="ease-out-cubic" className={styles.Services}>
+        <div  data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-once="true" data-aos-duration="1500" className={styles.Services}>
             <span className={styles.Icon}>
                 <img src={props.img} alt={props.title}/>
                 <p>{props.title}</p>
