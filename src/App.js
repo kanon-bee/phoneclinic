@@ -98,15 +98,22 @@ import protector from './Assets/Images/tablet/accessories/protector.png';
 import btSpeaker from './Assets/Images/tablet/accessories/speaker.png';
 import stand from './Assets/Images/tablet/accessories/stand.png';
 import CyberCafe from './Pages/Shop/CyberCafe/CyberCafe';
+import BaseContext from './Hoc/Authcontext/BaseContext';
+
 
 
 class App extends Component {
+
 
   state = {
 
     backDropValue: false,
     
     sideBar: false,
+
+    nestedNavValue1: false,
+
+    nestedNavValue2: false,
 
     brand: {
 
@@ -352,12 +359,32 @@ class App extends Component {
 
 
   toggleBackdrop= () => {
-  const current = this.state.backDropValue;
-  this.setState({backDropValue: !current, sideBar: false});
+    const current = this.state.backDropValue;
+
+    if (this.state.nestedNavValue1 === true){
+      this.setState({nestedNavValue1: false})
+    }
+    else if (this.state.nestedNavValue2 === true){
+      this.setState({nestedNavValue2: false})
+
+    }
+    else {
+      this.setState({backDropValue: !current, sideBar: false})
+    }
   }
 
-  toggleSidebar= () => {
+  toggleSidebar=  () => {
     this.setState({sideBar: true, backDropValue: true})
+  }
+
+
+  closeDrawer = () => {
+    this.setState(prevState => {
+      return {
+        sideBar: !prevState,
+        backDropValue: !prevState
+      }
+    })
   }
 
 
@@ -365,313 +392,322 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <div className='App'>
-            <Routes>
-              <Route path="/" exact element={<HomePage switchBar={this.toggleSidebar} 
-                                                        backdrop={this.state.backDropValue}
-                                                        toggleBackdrop={this.toggleBackdrop}
-                                                        switch={this.state.sideBar}/>} />
+        <BaseContext.Provider value={{state: this.state, closeDrawer: this.closeDrawer}}>
+          <div className='App'>
+              <Routes>
+                <Route path="/" exact element={<HomePage switchBar={this.toggleSidebar} 
+                                                          backdrop={this.state.backDropValue}
+                                                          toggleBackdrop={this.toggleBackdrop}
+                                                          switch={this.state.sideBar}
+                                                          />}/>
 
-              <Route path="/phone/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                <Route path="/phone/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                                                          backdrop={this.state.backDropValue}
+                                                          toggleBackdrop={this.toggleBackdrop}
+                                                          switch={this.state.sideBar}
+                                                          device="phone"
+                                                          />}/>
+                <Route path="/tablet/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                                                          backdrop={this.state.backDropValue}
+                                                          toggleBackdrop={this.toggleBackdrop}
+                                                          switch={this.state.sideBar}
+                                                          device="tablet"
+                                                          />}/>
+                <Route path="/laptop/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                                                          backdrop={this.state.backDropValue}
+                                                          toggleBackdrop={this.toggleBackdrop}
+                                                          switch={this.state.sideBar}
+                                                          device="laptop"
+                                                          />}/>         
+                <Route path="/repair/phone/*" element={<MainComponent switchBar={this.toggleSidebar} 
                                                         backdrop={this.state.backDropValue}
                                                         toggleBackdrop={this.toggleBackdrop}
                                                         switch={this.state.sideBar}
                                                         device="phone"
-                                                        />}/>
-              <Route path="/tablet/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                                                        data={this.state.brand}
+                                                        img={this.state.phoneLogo}
+                                                        path="/repair/phone"
+                                                        />} />
+                  <Route path="/repair/tablet/*" element={<MainComponent switchBar={this.toggleSidebar} 
                                                         backdrop={this.state.backDropValue}
                                                         toggleBackdrop={this.toggleBackdrop}
                                                         switch={this.state.sideBar}
                                                         device="tablet"
-                                                        />}/>
-              <Route path="/laptop/*" element={<PhoneMain switchBar={this.toggleSidebar} 
-                                                        backdrop={this.state.backDropValue}
-                                                        toggleBackdrop={this.toggleBackdrop}
-                                                        switch={this.state.sideBar}
-                                                        device="laptop"
-                                                        />}/>         
-              <Route path="/repair/phone/*" element={<MainComponent switchBar={this.toggleSidebar} 
+                                                        data={this.state.tablet}
+                                                        img={this.state.tabletLogo}
+                                                        path="/repair/tablet"
+                                                        />} />
+                  <Route path="/repair/laptop/*" element={<MainComponent switchBar={this.toggleSidebar}
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="laptop"
+                                                      data={this.state.laptop.title}
+                                                      img={this.state.laptop.laptopPic}
+                                                      path="/repair/laptop"
+                                                      />} />
+
+                  <Route path='/accessories/phone/*' element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.accessories.phone}
+                                                      img={this.state.accessories.phoneImg}
+                                                      device="phone"
+                                                      query="accessories"
+                                                      path="/accessories/phone"
+                                                      />}/>
+
+                  <Route path ="/accessories/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.pcCategory}
+                                                      img={this.state.pcImage}
+                                                      device="laptop"
+                                                      query="accessories"
+                                                      />}/>
+
+                  <Route path='/accessories/tablet/*' element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.accessories.tablet}
+                                                      img={this.state.accessories.tabletImg}
+                                                      device="tablet"
+                                                      query="accessories"
+                                                      />}/>
+
+                  {Object.keys(this.state.accessories.phone).map(item => {
+                    let dir = `/accessories/phone/${item}/inquiry`;
+                    return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      key={item}
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
                                                       device="phone"
+                                                      query="accessories"
+                                                      img={this.state.accessories.phoneImg[item]} />}/>
+                  })}
+
+                  {Object.keys(this.state.brand).map((item, index) => {
+                  let dir1 = `/repair/phone/${item}`;
+                  let dir2 = `/repair/phone/${item}/service`;
+                  return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
+                                                      key={item}
+                                                      pic={this.state.phonePic}
                                                       data={this.state.brand}
-                                                      img={this.state.phoneLogo}
-                                                      />} />
-                <Route path="/repair/tablet/*" element={<MainComponent switchBar={this.toggleSidebar} 
+                                                      device="phone"
+                                                      switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>} 
+                                                      />
+                            <Route key={item} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      key={index}
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="phone"
+                                                      query="repair"
+                                                      img={this.state.phonePic[item]} />} />
+                                                      </>
+                    })}              
+                {Object.keys(this.state.laptop.title).map((item, index) => {
+                  let dir = `/repair/laptop/${item}/service`;
+                  return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      key={index}
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="laptop"
+                                                      query="repair"
+                                                      img={this.state.laptop.laptopPic[item]} />} />
+                  })}
+                
+              
+                
+                {Object.keys(this.state.tablet).map((item, index) => {
+                  let dir1 = `/repair/tablet/${item}`;
+                  let dir2 = `/repair/tablet/${item}/service`;
+                  let dir3 = `/sale/tablet/${item}`;
+                  let dir4 = `/sale/tablet/${item}/inquiry`;
+
+                  return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
+                                                      key={item}
+                                                      data={this.state.tablet}
+                                                      pic={this.state.tabletPic}
+                                                      device="tablet"
+                                                      switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>} 
+                                                      />
+                            
+                            <Route key={index += 1} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      key={item}
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
                                                       device="tablet"
-                                                      data={this.state.tablet}
-                                                      img={this.state.tabletLogo}/>} />
-                <Route path="/repair/laptop/*" element={<MainComponent switchBar={this.toggleSidebar}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="laptop"
-                                                    data={this.state.laptop.title}
-                                                    img={this.state.laptop.laptopPic}/>} />
+                                                      query="repair"
+                                                      img={this.state.tabletPic[item]} />} />
 
-                <Route path='/accessories/phone/*' element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.accessories.phone}
-                                                    img={this.state.accessories.phoneImg}
-                                                    device="phone"
-                                                    query="accessories"
-                                                    />}/>
-
-                <Route path ="/accessories/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.pcCategory}
-                                                    img={this.state.pcImage}
-                                                    device="laptop"
-                                                    query="accessories"
-                                                    />}/>
-
-                <Route path='/accessories/tablet/*' element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.accessories.tablet}
-                                                    img={this.state.accessories.tabletImg}
-                                                    device="tablet"
-                                                    query="accessories"
-                                                    />}/>
-
-                {Object.keys(this.state.accessories.phone).map(item => {
-                  let dir = `/accessories/phone/${item}/inquiry`;
-                  return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
-                                                    key={item}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="phone"
-                                                    query="accessories"
-                                                    img={this.state.accessories.phoneImg[item]} />}/>
-                })}
-
-                {Object.keys(this.state.brand).map((item, index) => {
-                let dir1 = `/repair/phone/${item}`;
-                let dir2 = `/repair/phone/${item}/service`;
-                return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
-                                                    key={item}
-                                                    pic={this.state.phonePic}
-                                                    data={this.state.brand}
-                                                    device="phone"
-                                                    switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}/>} 
-                                                    />
-                          <Route key={item} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
-                                                    key={index}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="phone"
-                                                    query="repair"
-                                                    img={this.state.phonePic[item]} />} />
-                                                    </>
-                  })}              
-              {Object.keys(this.state.laptop.title).map((item, index) => {
-                let dir = `/repair/laptop/${item}/service`;
-                return <Route key={item} path={dir} element={<InquiryForm switchBar={this.toggleSidebar} 
-                                                    key={index}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="laptop"
-                                                    query="repair"
-                                                    img={this.state.laptop.laptopPic[item]} />} />
-                })}
-              
-            
-              
-              {Object.keys(this.state.tablet).map((item, index) => {
-                let dir1 = `/repair/tablet/${item}`;
-                let dir2 = `/repair/tablet/${item}/service`;
-                let dir3 = `/sale/tablet/${item}`;
-                let dir4 = `/sale/tablet/${item}/inquiry`;
-
-                return <> <Route key={item} path={dir1} element={<PhoneModels model={item}
-                                                    key={item}
-                                                    data={this.state.tablet}
-                                                    pic={this.state.tabletPic}
-                                                    device="tablet"
-                                                    switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}/>} 
-                                                    />
-                          
-                          <Route key={index += 1} path={dir2} element={<InquiryForm switchBar={this.toggleSidebar} 
-                                                    key={item}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="tablet"
-                                                    query="repair"
-                                                    img={this.state.tabletPic[item]} />} />
-
-                          <Route key={index += 2} path={dir3} element={<ItemDetails key={index} 
-                                                    switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    product="tablet"
-                                                    device={item}
-                                                    query="sale" />}/>
-
-                          <Route key={index += 3} path={dir4} element={<InquiryForm switchBar={this.toggleSidebar} 
-                                                    key={item}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="tablet"
-                                                    query="sale"
-                                                    img={this.state.tabletPic[item]} />}/>
-                                                    </>
-                })}
-
-              
-
-              
-
-              {Object.keys(this.state.accessories.tablet).map((item, index) => {
-                let dir = `/accessories/tablet/${item}/inquiry`;
-                return <Route key={item} path={dir} element={<InquiryForm key={index} switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="tablet"
-                                                    query="accessories"
-                                                    img={this.state.accessories.tabletImg[item]}
-                                                     />}/>
-              })}
-
-              {Object.keys(this.state.pcCategory).map((item, index) => {
-                let dir1 = `/accessories/laptop/${item}`;
-                let dir2 = `/accessories/laptop/${item}/inquiry`;
-                return <> <Route key={index} path={dir1} element={<ItemDetails key={item} 
-                                                    switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    product="laptop"
-                                                    device={item}
-                                                    query="accessories"/>}/>
-                          <Route key={index += 1} path={dir2} element={<InquiryForm key={index += 2} switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="laptop"
-                                                    query="accessories"
-                                                    img={this.state.pcImage[item]}
-                                                    // data={this.state.laptopAccessoriesImg}
-                                                     />}/>
-                                                     </>
-              })}
-
-              {Object.keys(this.state.laptopAccessoriesImg).map((item, index) => {
-                let dir = `/accessories/laptop/utilities/${item}/inquiry`;
-                return <Route key={index} path={dir} element={<InquiryForm key={item} switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="laptop"
-                                                    query="accessories"
-                                                    img={this.state.laptopAccessoriesImg[item]}
-                                                    data={this.state.laptopAccessoriesImg}
-                                                     />}/>
-              })}
-
-                <Route path ="/sale/phone/*" element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.brand}
-                                                    img={this.state.phoneLogo}
-                                                    device="phone"
-                                                    query="sale"
-                                                    />}/>
-
-                <Route path ="/sale/tablet/*" element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.tablet}
-                                                    img={this.state.tabletLogo}
-                                                    device="tablet"
-                                                    query="sale"
-                                                    />}/>
-
-                <Route path ="/sale/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    data={this.state.laptop.brand}
-                                                    img={this.state.laptop.logo}
-                                                    device="laptop"
-                                                    query="sale"
-                                                    />}/>
-
-                {Object.keys(this.state.laptop.brand).map((item, index) => {
-                  let dir = `/sale/laptop/${item}`;
-
-                  return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
-                                                    key={item}
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    device="laptop"
-                                                    query="sale"
-                                                    img={this.state.laptop.logo[item]} />}/>
-                })}
-
-              {Object.keys(this.state.brand).map((item, index) => {
-                let dir = `/sale/phone/${item}`;
-                return <Route key={item} path={dir} element={<ItemDetails key={index} 
-                                                    switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}
-                                                    product="phone"
-                                                    device={item}
-                                                    query="sale" />}/>
-              })}
-
-              {Object.keys(this.state.brand).map((item, index) => {
-                return this.state.brand[item].map(igKey => {
-
-                  let dir = `/sale/phone/${item}/inquiry`;
-                  return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
+                            <Route key={index += 2} path={dir3} element={<ItemDetails key={index} 
+                                                      switchBar={this.toggleSidebar} 
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}
+                                                      product="tablet"
+                                                      device={item}
+                                                      query="sale" />}/>
+
+                            <Route key={index += 3} path={dir4} element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      key={item}
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="tablet"
+                                                      query="sale"
+                                                      img={this.state.tabletPic[item]} />}/>
+                                                      </>
+                  })}
+
+                
+
+                
+
+                {Object.keys(this.state.accessories.tablet).map((item, index) => {
+                  let dir = `/accessories/tablet/${item}/inquiry`;
+                  return <Route key={item} path={dir} element={<InquiryForm key={index} switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="tablet"
+                                                      query="accessories"
+                                                      img={this.state.accessories.tabletImg[item]}
+                                                      />}/>
+                })}
+
+                {Object.keys(this.state.pcCategory).map((item, index) => {
+                  let dir1 = `/accessories/laptop/${item}`;
+                  let dir2 = `/accessories/laptop/${item}/inquiry`;
+                  return <> <Route key={index} path={dir1} element={<ItemDetails key={item} 
+                                                      switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      product="laptop"
+                                                      device={item}
+                                                      query="accessories"/>}/>
+                            <Route key={index += 1} path={dir2} element={<InquiryForm key={index += 2} switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="laptop"
+                                                      query="accessories"
+                                                      img={this.state.pcImage[item]}
+                                                      // data={this.state.laptopAccessoriesImg}
+                                                      />}/>
+                                                      </>
+                })}
+
+                {Object.keys(this.state.laptopAccessoriesImg).map((item, index) => {
+                  let dir = `/accessories/laptop/utilities/${item}/inquiry`;
+                  return <Route key={index} path={dir} element={<InquiryForm key={item} switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="laptop"
+                                                      query="accessories"
+                                                      img={this.state.laptopAccessoriesImg[item]}
+                                                      data={this.state.laptopAccessoriesImg}
+                                                      />}/>
+                })}
+
+                  <Route path ="/sale/phone/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.brand}
+                                                      img={this.state.phoneLogo}
                                                       device="phone"
                                                       query="sale"
-                                                      img={this.state.phonePic[item]} />}/>})
-              })}
+                                                      path="/sale/phone"
+                                                      />}/>
 
-              <Route path="/currency_converter" element={<CurrencyConverter switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}/>}/>
+                  <Route path ="/sale/tablet/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.tablet}
+                                                      img={this.state.tabletLogo}
+                                                      device="tablet"
+                                                      query="sale"
+                                                      path="/sale/tablet"
+                                                      />}/>
 
-              <Route path='/cybercafe/*' element={<CyberCafe switchBar={this.toggleSidebar} 
-                                                    backdrop={this.state.backDropValue}
-                                                    toggleBackdrop={this.toggleBackdrop}
-                                                    switch={this.state.sideBar}/>}/>
+                  <Route path ="/sale/laptop/*" element={<PcMain switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      data={this.state.laptop.brand}
+                                                      img={this.state.laptop.logo}
+                                                      device="laptop"
+                                                      query="sale"
+                                                      path="/sale/laptop"
+                                                      />}/>
 
+                  {Object.keys(this.state.laptop.brand).map((item, index) => {
+                    let dir = `/sale/laptop/${item}`;
 
+                    return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
+                                                      key={item}
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="laptop"
+                                                      query="sale"
+                                                      img={this.state.laptop.logo[item]} />}/>
+                  })}
 
-            </Routes>
-        </div>
+                {Object.keys(this.state.brand).map((item, index) => {
+                  let dir = `/sale/phone/${item}`;
+                  return <Route key={item} path={dir} element={<ItemDetails key={index} 
+                                                      switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      product="phone"
+                                                      device={item}
+                                                      query="sale" />}/>
+                })}
+
+                {Object.keys(this.state.brand).map((item, index) => {
+                  return this.state.brand[item].map(igKey => {
+
+                    let dir = `/sale/phone/${item}/inquiry`;
+                    return <Route key={index} path={dir} element={<InquiryForm switchBar={this.toggleSidebar}
+                                                        backdrop={this.state.backDropValue}
+                                                        toggleBackdrop={this.toggleBackdrop}
+                                                        switch={this.state.sideBar}
+                                                        device="phone"
+                                                        query="sale"
+                                                        img={this.state.phonePic[item]} />}/>})
+                })}
+
+                <Route path="/currency_converter" element={<CurrencyConverter switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>}/>
+
+                <Route path='/cybercafe/*' element={<CyberCafe switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>}/>
+              </Routes>
+          </div>
+        </BaseContext.Provider>
       </BrowserRouter>
     )
   }

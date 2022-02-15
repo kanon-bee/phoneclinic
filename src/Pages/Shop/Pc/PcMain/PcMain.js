@@ -85,7 +85,8 @@ class pcMain extends Component {
         
                 <SideDrawer backdrop={this.props.backdrop} 
                             toggleBackdrop={this.props.toggleBackdrop}
-                            switch={this.props.switch} />
+                            switch={this.props.switch}
+                            navPath={this.props.path} />
                 <div className={styles.Main}>
                     <div className={styles.Pic}>
                         {img}

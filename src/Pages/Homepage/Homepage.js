@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Toolbar from "../Toolbar/Toolbar";
 import SideDrawer from "../Sidedrawer/Sidedrawer";
 import HeaderIntro1 from "./HeaderIntro/HeaderIntro1/HeaderIntro1";
@@ -13,19 +13,27 @@ import issue from '../../Assets/Images/others/issue.png';
 import clipboard from '../../Assets/Images/others/clipboard.png';
 import delivery from '../../Assets/Images/others/delivery.png';
 import styles from './Homepage.module.css'
+import BaseContext from "../../Hoc/Authcontext/BaseContext";
+
 
 const HomePage = (props) => {
 
+    let context = useContext(BaseContext);
+
     useEffect(() => {
         window.scrollTo(0, 0);
+
     }, [])
+
 
     return (
         <div>
             <Toolbar switchBar={props.switchBar}/>
             <SideDrawer backdrop={props.backdrop} 
                         toggleBackdrop={props.toggleBackdrop}
-                        switch={props.switch} />
+                        switch={props.switch}
+                        />
+                        
             <HeaderIntro1 />
 
             <div className={styles.BannerMain}>

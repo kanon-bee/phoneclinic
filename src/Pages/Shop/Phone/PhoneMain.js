@@ -19,6 +19,8 @@ const PhoneMain = (props) => {
         window.scrollTo(0, 0);
 
         aos.init({duration: 1500});
+
+        console.log(window.location.href);
     }, []);
 
     //Defining Jsx Logically according to the device;

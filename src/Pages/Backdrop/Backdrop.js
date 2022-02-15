@@ -1,10 +1,18 @@
-import React from "react";
+import React,{ Component, useContext } from "react";
 import styles from './Backdrop.module.css';
+import BaseContext from "../../Hoc/Authcontext/BaseContext";
 
-const backDrop = (props) => (
-    <div className={props.trigger ? styles.Backdrop : null} onClick={props.click}>
+const Backdrop = (props)  => {
+    
+    const x = useContext(BaseContext);
 
-    </div>
-)
+    return (
+        <div className={props.trigger ? styles.Backdrop : null} onClick={props.click}>
 
-export default backDrop;
+        </div>
+    )
+        
+
+}
+
+export default Backdrop;

@@ -9,7 +9,6 @@ class RepairConsole extends Component {
 
     render () {
         const phoneRepair = Object.keys(this.props.Data).map((item, index) => {
-            console.log(item)
             return <RepairItem key={index} device={this.props.device}
                                 img={this.props.img[item]} 
                                 model={this.props.device === "laptop" ? this.props.Data[item] : item }

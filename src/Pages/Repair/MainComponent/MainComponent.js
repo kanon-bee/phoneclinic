@@ -9,9 +9,12 @@ import GetAquote from "../../../Extra/GetAqoute/GetAquote";
 import bgPhone from '../../../Assets/Images/others/phone.png';
 import bgTablet from '../../../Assets/Images/others/tablet.png';
 import bgLaptop from '../../../Assets/Images/others/laptop.png';
+import BaseContext from "../../../Hoc/Authcontext/BaseContext";
 
 
 class MainComponent extends Component {
+
+    static contextType = BaseContext
 
     state = {
         bg: {
@@ -25,6 +28,7 @@ class MainComponent extends Component {
         window.scrollTo(0,0);
     }
 
+
     render () {
 
         let backgound = null;
@@ -36,7 +40,7 @@ class MainComponent extends Component {
             return backgound;
         })
 
-
+        
         
         return (
     
@@ -45,7 +49,9 @@ class MainComponent extends Component {
     
                 <SideDrawer backdrop={this.props.backdrop} 
                             toggleBackdrop={this.props.toggleBackdrop}
-                            switch={this.props.switch} />
+                            switch={this.props.switch}
+                            navPath={this.props.path}
+                            />
                 <div className={styles.Main}>
                     <div className={styles.MainImg}>
                         <img src={backgound} alt={backgound} />

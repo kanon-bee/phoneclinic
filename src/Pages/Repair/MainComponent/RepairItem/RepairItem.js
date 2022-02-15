@@ -19,8 +19,6 @@ class RepairItem extends Component {
         else if (this.props.device === "laptop"){
             dir = `/repair/laptop/${this.props.dir}/service`;
         }
-        console.log(dir);
-    
 
         return (
             <Aux>

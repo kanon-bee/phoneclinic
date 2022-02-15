@@ -6,27 +6,33 @@
     font-family: 'Island Moments', cursive;
     font-family: 'PT Serif', serif;
     position: relative;
+    cursor: pointer;
 }
 
 .NavigationItem a {
-    color: rgb(92, 91, 91);
+    color: #BBBFCA;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.9rem;
-    cursor: pointer;
     text-decoration: none;
 }
 
 .NavigationItem a.active {
     padding: 5px 0;
-    border-bottom: 2px solid #334257;
-    color: orangered;
+    border-bottom: 2px solid #495464;
+    color: #BBBFCA;
+}
+
+.nestedLink a:hover {
+    color: #a7c0b7;
+    padding: 5px 0;
+    /* border-bottom: 2px solid #F1E0AC; */
 }
 
 .NavigationItem a:hover {
     color: orangered;
     padding: 5px 0;
-    border-bottom: 2px solid #334257;
+    /* border-bottom: 2px solid #F1E0AC; */
 }
 
 .nestedLink {
@@ -34,8 +40,8 @@
     position: absolute;
     top: 30px;
     left: -63px;
-    z-index: 200;
-    background-color: aliceblue;
+    z-index: 120;
+    background-color: #14274E;
     flex-flow: column;
     list-style: none;
     padding: 0;
@@ -46,9 +52,19 @@
     border-radius: 20px;
 }
 
+.nestedLinkOn {
+    display: flex;
+}
+
 .nestedLink a {
     text-decoration: none;
     border: 2px solid transparent;
+}
+
+.NavigationItem p {
+    margin: auto;
+    text-transform: uppercase;
+    color: #857a7a;
 }
 
 .NavigationItem:hover > .nestedLink {
