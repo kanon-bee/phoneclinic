@@ -7,19 +7,20 @@
 }
 
 .Services span {
-    height: 200px;
-    width: 100%;
+    height: 155px;
+    width: 75%;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
+    padding: 10px;
     cursor: pointer;
     text-decoration: none;
 }
 
 .Services img {
-    height: 100px;
+    height: 90px;
     width: 90px;
 }
 

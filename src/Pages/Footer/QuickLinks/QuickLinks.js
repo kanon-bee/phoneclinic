@@ -6,10 +6,10 @@ const quickLinks = (props) => (
     <div className={styles.Main}>
         <h3>Quick Links</h3>
         <ul>
-            <Link to="/">
+            <Link to="/aboutus">
                 <li>About Us</li>
             </Link>
-            <Link to="/">
+            <Link to="/homepage/serviceRef">
                 <li>Services</li>
             </Link><Link to="/">
                 <li>Appoinment</li>

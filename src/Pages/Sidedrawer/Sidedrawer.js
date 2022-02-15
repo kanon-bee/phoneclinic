@@ -10,9 +10,7 @@ import Drawtoggle from '../Drawtoggle/Drawtoggle'
 
 const SideDrawer = (props) => {
 
-    // useEffect(() => {
-    //     console.log(props.navPath)
-    // })
+    props.switch ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll'
 
     return (
         <Aux>
@@ -29,4 +27,4 @@ const SideDrawer = (props) => {
     )
 }
 
-export default SideDrawer;
+export default React.memo(SideDrawer);

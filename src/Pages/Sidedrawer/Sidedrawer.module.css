@@ -14,6 +14,10 @@
     align-items: flex-end;
 }
 
+.body {
+    overflow: hidden;
+}
+
 .Off {
     display: none;
 }

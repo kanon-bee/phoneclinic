@@ -18,9 +18,9 @@ const NavigationItems = (props) => {
 
                 <NavigationItem active={dirName[1] === 'sale' ? true: false} child="sale" >Sale</NavigationItem>
 
-                <NavigationItem active={dirName[1] === 'accessories' ? true: false} link="/">Accessories</NavigationItem>
+                <NavigationItem active={dirName[1] === 'accessories' ? true: false} link="/accessories" child="accessories" >Accessories</NavigationItem>
 
-                <NavigationItem active={dirName[1] === 'about' ? true: false} link="/">About Us</NavigationItem>
+                <NavigationItem active={dirName[1] === 'about' ? true: false} link="/aboutus">About Us</NavigationItem>
 
             </ul>
         </nav>

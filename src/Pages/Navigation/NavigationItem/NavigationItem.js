@@ -17,20 +17,20 @@ class NavigationItem extends Component {
     render () {
         let nestedLink = null;
         let dir = window.location.pathname.split('/')
-        // console.log(dir);
+
         
         if (this.props.child === 'repairs'){
             nestedLink = <li className={styles.NavigationItem}>
                 <ul className={styles.nestedLink}>
-                    <Link to="/repair/phone" onClick={this.context.closeDrawer} className={dir[2] === 'phone' ? styles.active : null}>
+                    <Link to="/repair/phone" onClick={this.context.closeDrawer} className={dir[1] === 'repair' && dir[2] === 'phone' ? styles.active : null}>
                         Phone
                     </Link>
     
-                    <Link to="/repair/tablet" onClick={this.context.closeDrawer} className={dir[2] === 'tablet' ? styles.active : null}>
+                    <Link to="/repair/tablet" onClick={this.context.closeDrawer} className={dir[1] === 'repair' && dir[2] === 'tablet' ? styles.active : null}>
                         Tablet
                     </Link>
                     
-                    <Link to="/repair/laptop" onClick={this.context.closeDrawer} className={dir[2] === 'laptop' ? styles.active : null}>
+                    <Link to="/repair/laptop" onClick={this.context.closeDrawer} className={dir[1] === 'repair' && dir[2] === 'laptop' ? styles.active : null}>
                         Laptop
                     </Link>
                 </ul>
@@ -40,15 +40,33 @@ class NavigationItem extends Component {
         else if (this.props.child === 'sale'){
             nestedLink = <li className={styles.NavigationItem}>
                 <ul className={styles.nestedLink} >
-                    <Link to="/sale/phone" onClick={this.context.closeDrawer} className={dir[2] === 'phone' ? styles.active : null}>
+                    <Link to="/sale/phone" onClick={this.context.closeDrawer} className={dir[1] === 'sale' && dir[2] === 'phone' ? styles.active : null}>
                         Phone
                     </Link>
     
-                    <Link to="/sale/tablet" onClick={this.context.closeDrawer} className={dir[2] === 'tablet' ? styles.active : null}>
+                    <Link to="/sale/tablet" onClick={this.context.closeDrawer} className={dir[1] === 'sale' && dir[2] === 'tablet' ? styles.active : null}>
                         Tablet
                     </Link>
                     
-                    <Link to="/sale/laptop" onClick={this.context.closeDrawer} className={dir[2] === 'laptop' ? styles.active : null}>
+                    <Link to="/sale/laptop" onClick={this.context.closeDrawer} className={dir[1] === 'sale' && dir[2] === 'laptop' ? styles.active : null}>
+                        Laptop
+                    </Link>
+                </ul>
+                <a className={this.props.active? styles.active : null} >{this.props.children}</a>
+            </li>
+        }
+        else if (this.props.child === 'accessories'){
+            nestedLink = <li className={styles.NavigationItem}>
+                <ul className={styles.nestedLink} >
+                    <Link to="/accessories/phone" onClick={this.context.closeDrawer} className={dir[1] === 'accessories' && dir[2] === 'phone' ? styles.active : null}>
+                        Phone
+                    </Link>
+    
+                    <Link to="/accessories/tablet" onClick={this.context.closeDrawer} className={dir[1] === 'accessories' && dir[2] === 'tablet' ? styles.active : null}>
+                        Tablet
+                    </Link>
+                    
+                    <Link to="/accessories/laptop" onClick={this.context.closeDrawer} className={dir[1] === 'accessories' && dir[2] === 'laptop' ? styles.active : null}>
                         Laptop
                     </Link>
                 </ul>

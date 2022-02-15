@@ -99,6 +99,7 @@ import btSpeaker from './Assets/Images/tablet/accessories/speaker.png';
 import stand from './Assets/Images/tablet/accessories/stand.png';
 import CyberCafe from './Pages/Shop/CyberCafe/CyberCafe';
 import BaseContext from './Hoc/Authcontext/BaseContext';
+import AboutUs from './Pages/AboutUs/AboutUs';
 
 
 
@@ -705,6 +706,11 @@ class App extends Component {
                                                       backdrop={this.state.backDropValue}
                                                       toggleBackdrop={this.toggleBackdrop}
                                                       switch={this.state.sideBar}/>}/>
+
+                <Route path='/aboutus' element={<AboutUs switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>} />
               </Routes>
           </div>
         </BaseContext.Provider>
