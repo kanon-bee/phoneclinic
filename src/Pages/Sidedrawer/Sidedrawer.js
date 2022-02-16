@@ -10,7 +10,7 @@ import Drawtoggle from '../Drawtoggle/Drawtoggle'
 
 const SideDrawer = (props) => {
 
-    props.switch ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll'
+    // props.switch ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll'
 
     return (
         <Aux>

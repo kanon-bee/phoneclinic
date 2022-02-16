@@ -116,6 +116,16 @@ class App extends Component {
 
     nestedNavValue2: false,
 
+    classes: {
+      html: {
+        overflow: 'hidden'
+      },
+
+      body: {
+        overflow: 'hidden'
+      }
+    },
+
     brand: {
 
 
@@ -360,18 +370,12 @@ class App extends Component {
 
 
   toggleBackdrop= () => {
-    const current = this.state.backDropValue;
-
-    if (this.state.nestedNavValue1 === true){
-      this.setState({nestedNavValue1: false})
-    }
-    else if (this.state.nestedNavValue2 === true){
-      this.setState({nestedNavValue2: false})
-
-    }
-    else {
-      this.setState({backDropValue: !current, sideBar: false})
-    }
+      this.setState((prevState) => {
+        return {
+          backDropValue: !prevState,
+          sideBar: !prevState
+        }
+      })
   }
 
   toggleSidebar=  () => {
@@ -389,12 +393,16 @@ class App extends Component {
   }
 
 
+
   render () {
+
+    
+
 
     return (
       <BrowserRouter>
         <BaseContext.Provider value={{state: this.state, closeDrawer: this.closeDrawer}}>
-          <div className='App'>
+          <div style={this.state.sideBar ? {position: 'fixed'}: {overflow: 'auto'}} className='App'>
               <Routes>
                 <Route path="/" exact element={<HomePage switchBar={this.toggleSidebar} 
                                                           backdrop={this.state.backDropValue}
