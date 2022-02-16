@@ -4,7 +4,6 @@ import './App.css';
 import HomePage from './Pages/Homepage/Homepage';
 import MainComponent from './Pages/Repair/MainComponent/MainComponent';
 import PhoneModels from './Pages/Repair/MainComponent/PhoneModels/PhoneModels';
-import RepairQuote from './Pages/Repair/MainComponent/RepairQuote/RepairQuote';
 //Backgound Image
 
 //Phone Model Logo
@@ -54,7 +53,6 @@ import power from './Assets/Images/Logo/Laptop/power.png';
 import recovery from './Assets/Images/Logo/Laptop/recovery.png';
 import touchpad from './Assets/Images/Logo/Laptop/touchpad.png';
 import PcMain from './Pages/Shop/Pc/PcMain/PcMain';
-import bgLaptop from './Assets/Images/laptop/l1.jpg';
 //Pc Images
 import Keyboard from './Assets/Images/pcAccesories/keyboard.png';
 import monitor from './Assets/Images/monitor/monitor.jpg';
@@ -65,7 +63,6 @@ import speaker from './Assets/Images/pcAccesories/speaker.jpg';
 import hdd from './Assets/Images/pcAccesories/hdd.png';
 import ItemDetails from './Pages/Shop/Pc/ItemDetails/ItemDetails';
 import CurrencyConverter from './Pages/CurrencyConverter/CurrencyConverter';
-import PhoneAccessoriesMain from './Pages/Shop/PhoneAccessories/PhoneAccessoriesMain/PhoneAccessoriesMain';
 import PhoneMain from './Pages/Shop/Phone/PhoneMain';
 import InquiryForm from './Pages/Repair/InquiryForm/InquiryForm';
 //Laptop logo
@@ -395,9 +392,6 @@ class App extends Component {
 
 
   render () {
-
-    
-
 
     return (
       <BrowserRouter>

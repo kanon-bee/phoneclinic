@@ -49,3 +49,8 @@
     }
 }
 
+@media (max-width:767px) and (max-height: 415px) {
+    .Nav {
+        margin: 10px auto;
+    }
+}

@@ -5,12 +5,9 @@ import styles from './InquiryForm.module.css';
 import Toolbar from '../../Toolbar/Toolbar';
 import SideDrawer from '../../Sidedrawer/Sidedrawer';
 import FooterMain from '../../Footer/FooterMain/FooterMain';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileSignature, faPhoneAlt, faStore } from '@fortawesome/free-solid-svg-icons';
-// import bgPhone from '../../../Assets/Images/phoneRepair.png';
-// import bgTablet from '../../../Assets/Images/tabletRepair.png'
-// import bgLaptop from '../../../Assets/Images/laptopRepair.png';
-// import accessories from '../../../Assets/Images/accessories.jpg';
+import form from '../../../Assets/Images/others/form.png';
+import call from '../../../Assets/Images/others/call.png';
+import shop from '../../../Assets/Images/others/shop.png';
 import banner from '../../../Assets/Images/banner.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
@@ -53,67 +50,91 @@ const InquiryForm = (props) => {
     let header3 = null;
     let para1 = null;
     let para2 = null;
+    let makePlaceholder = null;
+    let modelPlaceholder = null;
+    let accessoriesPlaceholder = "What's the Problem";
 
     if (props.device === 'phone' && props.query === 'repair') {
-        mainHeader = <h2>How to Repair from us</h2>
+        mainHeader = <h2>How to Repair Phone from us</h2>
         header1 = <h3>Fill up the form below including Phone Make, Model, Problems and Contact Details</h3>;
         header3 = <h3>Come in to our shop and have your Phone fixed</h3>
         para1 = <p>We sell all sorts of Mobile Phone Ranging from GSM CDMA to most recent smart phones</p>
         para2 = <h4>Please fill up the form Using your device Make Model and problems</h4>
+        makePlaceholder = "Phone's Make";
+        modelPlaceholder = "Phone's Model";
     }
     else if( props.device === 'phone' && props.query === 'sale') {
-        mainHeader = <h2>How to buy Phone from us</h2>
+        mainHeader = <h2>How to Buy Phone from us</h2>
         header1 = <h3>Fill up the form below including Phone Make, Model and Contact Details</h3>;
         header3 = <h3>Come in to our shop and get your Phone</h3>
         para2 = <h4>Please fill up the form Using your device Make, Model Color and storage</h4>
+        makePlaceholder = "Phone's Make";
+        modelPlaceholder = "Phone's Model";
     }
     else if( props.device === 'phone' && props.query === 'accessories') {
-        mainHeader = <h2>How to buy Accessories from us</h2>
-        header1 = <h3>Fill up the form below including Phone Make, Model and Contact Details</h3>;
-        header3 = <h3>Come in to our shop and get your Phone</h3>
+        mainHeader = <h2>How to Buy Phone Accessories from us</h2>
+        header1 = <h3>Fill up the form below including Phone Make, Model, Required Item and Contact Details</h3>;
+        header3 = <h3>Come in to our shop and get your Gagdet</h3>
         para1 = <p>We sell all sorts of Mobile Accessories Ranging from GSM CDMA to most recent smart phones</p>
         para2 = <h4>Please fill up the form Using your required Accessories</h4>
+        makePlaceholder = "Phone's Make";
+        modelPlaceholder = "Phone's Model";
+        accessoriesPlaceholder = "Reqired Accessories"
     }
     if (props.device === 'tablet' && props.query === 'repair') {
-        mainHeader = <h2>How to Repair from us</h2>
+        mainHeader = <h2>How to Repair Tablet from us</h2>
         header1 = <h3>Fill up the form below including Tablet Make, Model, Problems and Contact Details</h3>;
         header3 = <h3>Come in to our shop and have your Tablet fixed</h3>
         para2 = <h4>Please fill up the form Using your device Make Model and problems</h4>
+        makePlaceholder = "Tablet's Make";
+        modelPlaceholder = "Tablet's Model";
     }
     else if( props.device === 'tablet' && props.query === 'sale') {
-        mainHeader = <h2>How to buy Tablet from us</h2>
+        mainHeader = <h2>How to Buy Tablet from us</h2>
         header1 = <h3>Fill up the form below including Tablet Make, Model and Contact Details</h3>;
         header3 = <h3>Come in to our shop and get your Tablet</h3>
         para1 = <p>We sell all sorts of Tablet PC iPad, Samsung Galaxy  Series, Amazon Kindle fire and many more</p>
         para2 = <h4>Please fill up the form Using your device Make, Model, Color and Storage </h4>
+        makePlaceholder = "Tablet's Make";
+        modelPlaceholder = "Tablet's Model";
     }
     else if( props.device === 'tablet' && props.query === 'accessories') {
-        mainHeader = <h2>How to buy accessories from us</h2>
-        header1 = <h3>Fill up the form below including Tablet Make, Model and Contact Details</h3>;
+        mainHeader = <h2>How to Buy Tablet Accessories from us</h2>
+        header1 = <h3>Fill up the form below including Tablet Make, Model, Required Item and Contact Details</h3>;
         para1 = <p>We sell all sorts of Tablet Accessories including Cover, Charger, Headphone and Many more</p>
         header3 = <h3>Come in to our shop and get your Tablet</h3>
         para2 = <h4>Please fill up the form Using your Required Accessories</h4>
+        makePlaceholder = "Tablet's Make";
+        modelPlaceholder = "Tablet's Model";
+        accessoriesPlaceholder = "Reqired Accessories"
     }
 
     if (props.device === 'laptop' && props.query === 'repair') {
-        mainHeader = <h2>How to Repair from us</h2>
+        mainHeader = <h2>How to Repair Laptop from us</h2>
         header1 = <h3>Fill up the form below including Laptop Make, Model, Problems and Contact Details</h3>;
         header3 = <h3>Come in to our shop and have your Laptop fixed</h3>
         para2 = <h4>Please fill up the form Using your device Make Model and problems</h4>
+        makePlaceholder = "Laptop's Make";
+        modelPlaceholder = "Laptop's Model";
     }
     else if( props.device === 'laptop' && props.query === 'sale') {
-        mainHeader = <h2>How to buy Laptop from us</h2>
+        mainHeader = <h2>How to Buy Laptop from us</h2>
         header1 = <h3>Fill up the form below including Laptop Make, Model and Contact Details</h3>;
         header3 = <h3>Come in to our shop and get your Laptop</h3>
         para1 = <p>We sell all sorts of Laptop including Macbook, HP, Sony, Dell, Samsung</p>
         para2 = <h4>Please fill up the form Using your device Make, Model, Color and Storage</h4>
+        makePlaceholder = "Laptop's Make";
+        modelPlaceholder = "Laptop's Model";
     }
     else if( props.device === 'laptop' && props.query === 'accessories') {
-        mainHeader = <h2>How to buy accessories from us</h2>
-        header1 = <h3>Fill up the form below including Laptop Make, Model and Contact Details</h3>;
+        mainHeader = <h2>How to Buy Laptop Accessories from us</h2>
+        header1 = <h3>Fill up the form below including Laptop Make, Model, Required Item and Contact Details</h3>;
         header3 = <h3>Come in to our shop and get your Laptop</h3>
         para1 = <p>We sell all sorts of Laptp Accessories including Laptop parts and accessories like cable, bag, charger etc</p>
         para2 = <h4>Please fill up the form Using your Required Accessories</h4>
+        makePlaceholder = "Laptop's Make";
+        modelPlaceholder = "Laptop's Model";
+        accessoriesPlaceholder = "Reqired Accessories"
     }
 
 
@@ -128,7 +149,7 @@ const InquiryForm = (props) => {
                         
             <div className={styles.Img}> 
                 <div data-aos="fade-down-right" data-aos-easing="ease-out-cubic" className={styles.Subimg}>
-                    <img src={props.img}/>
+                    <img src={props.img} alt="device"/>
                 </div>
 
                 <div className={styles.Subpara}>
@@ -164,17 +185,17 @@ const InquiryForm = (props) => {
 
                 <div className={styles.SubHeading}>
                     <div className={styles.Subs}>
-                        <FontAwesomeIcon icon={faFileSignature} className={styles.Font}/>
+                        <img src={form} alt="form" />
                         {header1}
                     </div>
 
                     <div className={styles.Subs}>
-                        <FontAwesomeIcon icon={faPhoneAlt} className={styles.Font}/>
+                        <img src={call} alt="call" />
                         <h3>You will receive a phone call about your appoinment time and price within an hour</h3>
                     </div>
 
                     <div className={styles.Subs}>
-                        <FontAwesomeIcon icon={faStore} className={styles.Font}/>
+                        <img src={shop} alt="shop" />
                         {header3}
                     </div>
                 </div>
@@ -186,15 +207,15 @@ const InquiryForm = (props) => {
                     <div className={styles.Phone}>
                         <input readOnly name='serviceType' value={props.query} className={styles.Hidden} />
                         <input readOnly name='deviceName' value={props.device} className={styles.Hidden} />
-                        <input type="text" required placeholder='Make' name='make'/>
-                        <input type="text" required placeholder='Model' name='model'/>
+                        <input type="text" required placeholder={makePlaceholder} name='make'/>
+                        <input type="text" required placeholder={modelPlaceholder} name='model'/>
                     </div>
                     {props.query === 'sale' ? <div className={styles.Phone}>
                         <input type="text" placeholder='Color' name='color'/>
                         <input type="text" placeholder='Storage' name='storage'/>
                     </div>:
 
-                    <textarea name='problem' required rows={7} cols={30} placeholder='Whats the Problem' />
+                    <textarea name='problem' required rows={7} cols={30} placeholder={accessoriesPlaceholder} />
                     }
                     
                     {props.query === 'sale' ? <select name='condition' defaultValue="Select Condition">

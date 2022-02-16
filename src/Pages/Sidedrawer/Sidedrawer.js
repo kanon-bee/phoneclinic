@@ -1,16 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Logo from "../Logo/Logo";
 import NavigationItems from '../Navigation/NavigationItems/NavigationItems'
 import styles from './Sidedrawer.module.css';
 import Aux from "../../Hoc/Aux/Aux";
-import { useLocation } from "react-router-dom";
 import Backdrop from '../Backdrop/Backdrop'
-import BaseContext from "../../Hoc/Authcontext/BaseContext";
-import Drawtoggle from '../Drawtoggle/Drawtoggle'
 
 const SideDrawer = (props) => {
-
-    // props.switch ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll'
 
     return (
         <Aux>

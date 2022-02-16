@@ -1,6 +1,6 @@
-import React,{ Component, useContext } from "react";
+import React from "react";
 import styles from './Backdrop.module.css';
-import BaseContext from "../../Hoc/Authcontext/BaseContext";
+
 
 const Backdrop = (props)  => {
 
