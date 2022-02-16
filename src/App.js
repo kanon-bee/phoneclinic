@@ -402,19 +402,40 @@ class App extends Component {
                                                           switch={this.state.sideBar}
                                                           />}/>
 
-                <Route path="/phone/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                <Route path='/service' element={<HomePage switchBar={this.toggleSidebar} 
+                                                          backdrop={this.state.backDropValue}
+                                                          toggleBackdrop={this.toggleBackdrop}
+                                                          switch={this.state.sideBar}
+                                                          service={true}
+                                                          />} />
+
+                <Route path='/inquiry' element={<InquiryForm switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}
+                                                      device="phone"
+                                                      query="sale"
+                                                      img={this.state.phonePic.apple}/> 
+                                                      }/>
+
+                <Route path='/contact' element={<AboutUs switchBar={this.toggleSidebar} 
+                                                      backdrop={this.state.backDropValue}
+                                                      toggleBackdrop={this.toggleBackdrop}
+                                                      switch={this.state.sideBar}/>}/>
+
+                <Route path="/phone" element={<PhoneMain switchBar={this.toggleSidebar} 
                                                           backdrop={this.state.backDropValue}
                                                           toggleBackdrop={this.toggleBackdrop}
                                                           switch={this.state.sideBar}
                                                           device="phone"
                                                           />}/>
-                <Route path="/tablet/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                <Route path="/tablet" element={<PhoneMain switchBar={this.toggleSidebar} 
                                                           backdrop={this.state.backDropValue}
                                                           toggleBackdrop={this.toggleBackdrop}
                                                           switch={this.state.sideBar}
                                                           device="tablet"
                                                           />}/>
-                <Route path="/laptop/*" element={<PhoneMain switchBar={this.toggleSidebar} 
+                <Route path="/laptop" element={<PhoneMain switchBar={this.toggleSidebar} 
                                                           backdrop={this.state.backDropValue}
                                                           toggleBackdrop={this.toggleBackdrop}
                                                           switch={this.state.sideBar}

@@ -6,7 +6,7 @@ const NavigationItems = (props) => {
 
     const dirName = window.location.pathname.split('/');
 
-    // console.log(window.location)
+    console.log(window.location.pathname)
 
 
     return (
@@ -20,7 +20,7 @@ const NavigationItems = (props) => {
 
                 <NavigationItem active={dirName[1] === 'accessories' ? true: false} link="/accessories" child="accessories" >Accessories</NavigationItem>
 
-                <NavigationItem active={dirName[1] === 'about' ? true: false} link="/aboutus">About Us</NavigationItem>
+                <NavigationItem active={dirName[1] === 'aboutus' ? true: false} link="/aboutus">About Us</NavigationItem>
 
             </ul>
         </nav>

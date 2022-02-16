@@ -6,7 +6,7 @@ const headerIntro1 = () => (
     <div className={styles.HeaderIntro1}>
         <h2><strong>Excellent Services For Repairing Your Broken Gadget</strong></h2>
         <p className={styles.para}>We Repair All sorts of smart Devices and We provide the Best services in South East London</p>
-        <Link to="phone/phonerepair/*" className={styles.btn}><p>Book Appoinment</p></Link>
+        <Link to="/repair/phone" className={styles.btn}><p>Book Appoinment</p></Link>
     </div>
 )
 

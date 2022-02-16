@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './ServiceMain.module.css';
 import Services from '../Services/Services';
 import phone from '../../../../Assets/Images/others/phone.png';
@@ -12,10 +12,11 @@ import { Link } from 'react-router-dom';
 
 const ServiceMain = () => {
 
-    const serviceRef = useRef(null);
+    const serviceRef = useRef();
+
 
     return (
-        <div ref={serviceRef} tabIndex="-1" className={styles.ServiceMain}>
+        <div id="service" ref={serviceRef} className={styles.ServiceMain}>
             <h2>What you are Looking For Today</h2>
             <div className={styles.Ext}>
                 <Link to="/phone">

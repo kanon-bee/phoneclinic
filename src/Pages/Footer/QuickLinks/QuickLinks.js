@@ -9,11 +9,11 @@ const quickLinks = (props) => (
             <Link to="/aboutus">
                 <li>About Us</li>
             </Link>
-            <Link to="/homepage/serviceRef">
+            <Link to="/service" >
                 <li>Services</li>
-            </Link><Link to="/">
+            </Link><Link to="/inquiry">
                 <li>Appoinment</li>
-            </Link><Link to="/">
+            </Link><Link to="/contact">
                 <li>Contact</li>
             </Link>
         </ul>

@@ -20,6 +20,10 @@ const InquiryForm = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         aos.init({duration: 1500});
+
+        if (window.location.pathname === '/inquiry') {
+            document.getElementById('inquiry').scrollIntoView();
+        }
     })
 
     function sendInquiry (event) {
@@ -177,7 +181,7 @@ const InquiryForm = (props) => {
             </div>
 
 
-            <div className={styles.FormMain}>
+            <div id="inquiry" className={styles.FormMain}>
                 <form onSubmit={sendInquiry} className={styles.Form}>
                     <div className={styles.Phone}>
                         <input readOnly name='serviceType' value={props.query} className={styles.Hidden} />

@@ -10,7 +10,7 @@
 }
 
 .NavigationItem a {
-    color: #BBBFCA;
+    color: #495371;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -19,8 +19,8 @@
 
 .NavigationItem a.active {
     padding: 5px 0;
-    border-bottom: 2px solid #495464;
-    color: #BBBFCA;
+    border-bottom: 2px solid #FF9292;
+    color: #FF9292;
 }
 
 .nestedLink a:hover {
@@ -30,7 +30,7 @@
 }
 
 .NavigationItem a:hover {
-    color: orangered;
+    color: #FF9292;
     padding: 5px 0;
     /* border-bottom: 2px solid #F1E0AC; */
 }
@@ -41,7 +41,7 @@
     top: 30px;
     left: -50px;
     z-index: 120;
-    background-color: #14274E;
+    background-color: #F4F9F9;
     flex-flow: column;
     list-style: none;
     padding: 0;
