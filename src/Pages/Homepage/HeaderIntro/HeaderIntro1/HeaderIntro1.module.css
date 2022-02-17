@@ -133,9 +133,9 @@
 
 
 @media (max-width: 500px){
-    .HeaderIntro1 {
+    /* .HeaderIntro1 {
         height: 500px;
-    }
+    } */
 
     .HeaderIntro1 h2 {
         font-size: 18px;

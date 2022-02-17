@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Creepster&family=Josefin+Sans&family=Luxurious+Roman&family=Open+Sans:wght@300&family=PT+Sans+Narrow:wght@700&family=PT+Serif&family=Permanent+Marker&family=Playball&family=Roboto:wght@100&family=Source+Sans+Pro:wght@300&display=swap');
 
 
-.Logo {
-    width: 218px;
-    /* height: 55px; */
-    font-family: 'Creepster', cursive;
+.Logo img {
+    height: 90px;
+    width: 215px;
 }
 
 .Logo a {
@@ -18,24 +17,4 @@
 .Logo h2 {
     font-size: 40px;
     color: #1d3557;
-}
-
-@media (max-width: 767px) {
-    .Logo {
-        width: 180px;
-    }
-
-    .Logo h2 {
-        font-size: 33px;
-    }
-}
-
-@media (max-width: 400px) {
-    .Logo {
-        width: 180px;
-    }
-
-    .Logo h2 {
-        font-size: 24px;
-    }
 }
