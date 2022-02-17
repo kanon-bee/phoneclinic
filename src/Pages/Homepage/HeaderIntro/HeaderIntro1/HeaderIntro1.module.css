@@ -12,8 +12,6 @@
     justify-content: center;
     align-items: center;
     animation: head1 2s ease-in forwards;
-    font-family: 'Amatic SC', cursive;
-    font-family: 'PT Serif', serif;
     filter: contrast(2);
 }
 
@@ -55,6 +53,7 @@
 .btn p {
     color: #646464;
     font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: 2px;
 }
 
 .btn:hover {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from './HeaderIntro2.module.css';
 import img from '../../../../Assets/Images/phoneClinic.jpg';
-import phone from '../../../../Assets/Images/heading/mobile.jpg';
+import phone from '../../../../Assets/Images/heading/mobileRepair.png';
 import laptop from '../../../../Assets/Images/heading/laptop.jpeg';
 import gagdet from '../../../../Assets/Images/heading/devices.jpg';
 import ria from '../../../../Assets/Images/heading/ria.png';
@@ -18,11 +18,11 @@ const HeaderIntro2 = () => {
 
     return (
         <div className={styles.HeaderIntro2}>
-            <div className={styles.Container} data-aos="fade-right">
+            <div className={styles.Container} data-aos="fade-right" data-aos-once="true">
                 <img className={styles.Img} src={img} alt="HeaderIntro 2"/>
             </div>
 
-            <div data-aos="fade-left" className={styles.Para}>
+            <div data-aos="fade-left" data-aos-once="true" className={styles.Para}>
                 <h2>We Provide The Best Services To Repair Your Gagdet</h2>
                 <p>Phone Clinic serves One of many services you need your everyday life. Our service starts from phone servicing.
                     We provide the best gagdet repairing service in South East London. Our expertises are experinced

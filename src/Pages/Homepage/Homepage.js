@@ -13,15 +13,9 @@ import issue from '../../Assets/Images/others/issue.png';
 import clipboard from '../../Assets/Images/others/clipboard.png';
 import delivery from '../../Assets/Images/others/delivery.png';
 import styles from './Homepage.module.css'
-import BaseContext from "../../Hoc/Authcontext/BaseContext";
 
 
 class HomePage extends Component {
-
-    constructor (props) {
-        super (props)
-        // this.serviceRef = React.createRef()
-    }
 
     componentDidMount() {
         if (window.location.pathname === '/service'){
@@ -46,7 +40,7 @@ class HomePage extends Component {
     
                     <div className={styles.Banner}>
                         <img src={pic1} alt="pic1"/>
-                        <div>
+                        <div className={styles.Subbanner}>
                             <h3>Mobile Servicing</h3>
                             <p>All kinds of Smartphone Services</p>
                         </div>
@@ -54,7 +48,7 @@ class HomePage extends Component {
     
                     <div className={styles.Banner}>
                         <img src={pic2} alt="pic2"/>
-                        <div>
+                        <div className={styles.Subbanner}>
                             <h3>Money Transfer</h3>
                             <p>Sends Money All Over the World</p>
                         </div>
@@ -62,7 +56,7 @@ class HomePage extends Component {
     
                     <div className={styles.Banner}>
                         <img src={pic3} alt="pic3"/>
-                        <div>
+                        <div className={styles.Subbanner}>
                             <h3>Laptop and Mobile Parts</h3>
                             <p>All Kinds of Laptop and Smartphone Accessories</p>
                         </div>

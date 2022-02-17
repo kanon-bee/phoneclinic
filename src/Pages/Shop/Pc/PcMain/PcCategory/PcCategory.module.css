@@ -1,11 +1,13 @@
 .Main {
     width: 100%;
     margin: 100px auto;
+    background-color: #69637a;
 }
 
 .Shop {
     width: 90%;
     margin: 90px auto;
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

@@ -312,6 +312,10 @@ form button:hover{
         display: none;
     }
 
+    .Subs img {
+        width: 80px;
+    }
+
     .Subpara {
         width: 90%;
     }

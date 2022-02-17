@@ -2,7 +2,7 @@
 
 
 .Main {
-    width: 25%;
+    width: 50%;
     min-width: 233px;
     margin: 0 auto;
     font-family: 'Amatic SC', cursive;
@@ -26,18 +26,18 @@
 .Main ul li {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     color: #EEEEEE;
 }
 
 .Main ul li p {
     width: 223px;
+    margin: 16px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 449px) {
     .Main {
-        height: 150px;
-        padding: 12px 0;
+        width: 90%;
     }
 }

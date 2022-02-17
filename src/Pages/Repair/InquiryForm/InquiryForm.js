@@ -29,6 +29,7 @@ const InquiryForm = (props) => {
             emailjs.sendForm('service_zla7qih', 'template_l2gzp1a', event.target, 'user_cEwV4WZvDeX8VQnYqIdlW')
                 .then((result) => {
                     alert('Your Query has been sent');
+                    window.scrollTo(0, 0);
                 }, (error) => {
                     console.log(error.text);
                 });
@@ -38,6 +39,7 @@ const InquiryForm = (props) => {
             emailjs.sendForm('service_zla7qih', 'template_gyuauft', event.target, 'user_cEwV4WZvDeX8VQnYqIdlW')
                 .then((result) => {
                     alert('Your Query has been sent');
+                    window.scrollTo(0, 0);
                 }, (error) => {
                     console.log(error.text);
                 });
