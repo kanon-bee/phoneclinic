@@ -16,7 +16,7 @@ import Backdrop from '../../Backdrop/Backdrop';
 
 const InquiryForm = (props) => {
 
-    const [modalValue, setModalValue] = useState(true);
+    const [modalValue, setModalValue] = useState(false);
 
     const [queryFail, setqueryFail] = useState(false);
 
