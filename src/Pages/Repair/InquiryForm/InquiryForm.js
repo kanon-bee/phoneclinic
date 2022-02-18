@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Aux from '../../../Hoc/Aux/Aux';
 import emailjs from '@emailjs/browser';
 import styles from './InquiryForm.module.css';
@@ -11,8 +11,20 @@ import shop from '../../../Assets/Images/others/shop.png';
 import banner from '../../../Assets/Images/banner.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
+import Modal from '../../../Extra/Modal/Modal';
+import Backdrop from '../../Backdrop/Backdrop';
 
 const InquiryForm = (props) => {
+
+    const [modalValue, setModalValue] = useState(true);
+
+    const [queryFail, setqueryFail] = useState(false);
+
+    console.log(modalValue)
+
+    
+
+    console.log(modalValue)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,14 +35,16 @@ const InquiryForm = (props) => {
         }
     })
 
+
     function sendInquiry (event) {
         event.preventDefault();
         if (props.query === 'sale') {
             emailjs.sendForm('service_zla7qih', 'template_l2gzp1a', event.target, 'user_cEwV4WZvDeX8VQnYqIdlW')
                 .then((result) => {
-                    alert('Your Query has been sent');
                     window.scrollTo(0, 0);
+                    switchModal()
                 }, (error) => {
+                    switchQueryFail();
                     console.log(error.text);
                 });
             event.target.reset();
@@ -38,14 +52,32 @@ const InquiryForm = (props) => {
         else {
             emailjs.sendForm('service_zla7qih', 'template_gyuauft', event.target, 'user_cEwV4WZvDeX8VQnYqIdlW')
                 .then((result) => {
-                    alert('Your Query has been sent');
                     window.scrollTo(0, 0);
+                    switchModal()
                 }, (error) => {
                     console.log(error.text);
                 });
             event.target.reset();
         }
     };
+
+    function switchModal (){
+        setModalValue(true);
+    }
+
+    function switchQueryFail () {
+        setqueryFail(true);
+    }
+
+    function toggleModal () {
+        setModalValue(false);
+    }
+
+    function toggleModalFail () {
+        setqueryFail(false);
+    }
+
+    console.log(queryFail);
 
     let mainHeader = null;
     let header1 = null;
@@ -165,6 +197,15 @@ const InquiryForm = (props) => {
                     </div>
                 </div>
             </div>
+
+            <div className={styles.Modal}>
+                {modalValue ? <Modal backDropValue={modalValue} backDropToggle={toggleModal}/> : null}
+            </div>
+
+            <div className={styles.Modal}>
+                {queryFail ? <Modal queryFail={queryFail} backDropValue={queryFail} backDropToggle={toggleModalFail}/> : null}
+            </div>
+
 
             <div className={styles.MainHeading}>
                 <div data-aos="fade-right" data-aos-easing="ease-out-cubic" className={styles.MainImg}>
