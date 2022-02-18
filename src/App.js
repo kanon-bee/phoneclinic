@@ -350,17 +350,6 @@ class App extends Component {
       utilities: utilities,
       ram: ram,
       speaker: speaker
-    },
-
-    pcDetails: {
-      desktop: ['Join With Us Today', 'Join With Us Today', 'Join With Us Today'],
-      keyboard: ['Lorem ipsum dolor', 'Lorem ipsum dolor', 'Lorem ipsum dolor'],
-      laptop: ['consectetur adipiscing', 'consectetur adipiscing', 'consectetur adipiscing'],
-      monitor: [' sed do eiusmod', ' sed do eiusmod', ' sed do eiusmod'],
-      mouse: ['tempor incididunt ut', 'tempor incididunt ut', 'tempor incididunt ut'],
-      utilities: ['labore et dolore magna', 'labore et dolore magna', 'labore et dolore magna'],
-      ram: ['aliqua. Quis ipsum', 'aliqua. Quis ipsum', 'aliqua. Quis ipsum'],
-      speaker: ['suspendisse ultrices', 'suspendisse ultrices', 'suspendisse ultrices'],
     }
 
   }
@@ -387,6 +376,10 @@ class App extends Component {
         backDropValue: !prevState
       }
     })
+  }
+
+  componentDidMount () {
+    console.log('app.js mount');
   }
 
 

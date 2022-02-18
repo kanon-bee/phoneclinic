@@ -10,7 +10,7 @@
 }
 
 .NavigationItem a {
-    color: #495371;
+    color: #68a9e8;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -41,7 +41,7 @@
     top: 30px;
     left: -50px;
     z-index: 120;
-    background-color: #F4F9F9;
+    background-color: #e8ebf9;
     flex-flow: column;
     list-style: none;
     padding: 0;

@@ -25,6 +25,7 @@
 .Mobile img {
     height: 80px;
     width: 90px;
+    filter: brightness(1.2);
 }
 
 

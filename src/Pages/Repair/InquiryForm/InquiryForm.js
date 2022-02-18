@@ -12,7 +12,6 @@ import banner from '../../../Assets/Images/banner.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import Modal from '../../../Extra/Modal/Modal';
-import Backdrop from '../../Backdrop/Backdrop';
 
 const InquiryForm = (props) => {
 
