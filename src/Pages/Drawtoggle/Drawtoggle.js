@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import styles from './Drawtoggle.module.css';
-import BaseContext from "../../Hoc/Authcontext/BaseContext";
+
 
 const DrawToggle = (props)  => {
 
-    const context = useContext(BaseContext);
+    useEffect(() => {
+    }, []);
+    
+    console.log('DrawToggle');
 
     return (
         <div className={styles.Drawtoggle} onClick={props.switch}>
@@ -15,4 +18,4 @@ const DrawToggle = (props)  => {
     )
 }
 
-export default DrawToggle;
+export default React.memo(DrawToggle);

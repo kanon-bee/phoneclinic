@@ -5,7 +5,11 @@ import styles from './RepairConsole.module.css';
 
 
 
-class RepairConsole extends Component {    
+class RepairConsole extends Component {
+
+    componentDidMount () {
+        console.log('repairConsole');
+    }
 
     render () {
         const phoneRepair = Object.keys(this.props.Data).map((item, index) => {

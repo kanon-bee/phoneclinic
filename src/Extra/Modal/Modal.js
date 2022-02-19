@@ -3,7 +3,11 @@ import styles from './Modal.module.css';
 import Aux from '../../Hoc/Aux/Aux';
 import Backdrop from '../../Pages/Backdrop/Backdrop'
 
-const modal = (props) => {
+const Modal = (props) => {
+
+    useState(() => {
+        console.log('Modal');
+    })
 
     return (
         <Aux>
@@ -30,4 +34,4 @@ const modal = (props) => {
     )
 }
 
-export default modal;
+export default Modal;

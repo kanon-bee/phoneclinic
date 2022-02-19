@@ -26,6 +26,7 @@ class MainComponent extends Component {
 
     componentDidMount () {
         window.scrollTo(0,0);
+        console.log('mainComponent')
     }
 
 

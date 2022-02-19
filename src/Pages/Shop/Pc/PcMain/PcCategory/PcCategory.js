@@ -6,7 +6,19 @@ import styles from './PcCategory.module.css';
 
 
 class PcCategory extends Component {
-    
+
+    componentDidMount () {
+        console.log('pcCategory');
+    }
+
+    shouldComponentUpdate (prevProps) {
+        if (prevProps.device !== this.props.device){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     render () {
         let item = null;

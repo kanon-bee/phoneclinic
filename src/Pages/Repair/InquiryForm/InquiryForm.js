@@ -19,21 +19,18 @@ const InquiryForm = (props) => {
 
     const [queryFail, setqueryFail] = useState(false);
 
-    console.log(modalValue)
-
-    
-
-    console.log(modalValue)
-
     useEffect(() => {
         window.scrollTo(0, 0);
-        aos.init({duration: 1500});
+        aos.init({duration: 1200});
 
         if (window.location.pathname === '/inquiry') {
             document.getElementById('inquiry').scrollIntoView();
+        }if (window.location.pathname === '/inquiry') {
+            document.getElementById('inquiry').scrollIntoView();
         }
-    })
+    }, [])
 
+    console.log('inquiryFrom');
 
     function sendInquiry (event) {
         event.preventDefault();
@@ -76,7 +73,6 @@ const InquiryForm = (props) => {
         setqueryFail(false);
     }
 
-    console.log(queryFail);
 
     let mainHeader = null;
     let header1 = null;
@@ -308,4 +304,4 @@ const InquiryForm = (props) => {
     )
 }
 
-export default InquiryForm;
+export default React.memo(InquiryForm);

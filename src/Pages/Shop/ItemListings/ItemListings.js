@@ -21,6 +21,10 @@ class ItemListings extends Component {
         this.setState({ pageNumber: currentPage })
     }
 
+    componentDidMount () {
+        console.log('itemListing')
+    }
+
     render () {
         let displayItem = null;
         let product = this.props.product;

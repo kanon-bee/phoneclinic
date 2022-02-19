@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './GetAquote.module.css';
 
-const getAquote = (props) => {
+const GetAquote = (props) => {
+
+    useEffect(() => {
+        console.log('GetAQoute');
+    }, [])
+    
     let msg = null;
     
     if (props.device === 'pc' || 'laptop') {
@@ -28,4 +33,4 @@ const getAquote = (props) => {
     )
 }
 
-export default getAquote;
+export default React.memo(GetAquote);

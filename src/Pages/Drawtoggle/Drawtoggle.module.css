@@ -1,7 +1,6 @@
 .Drawtoggle {
     width: 40px;
     height: 55px;
-    margin: 10px;
     display: flex;
     flex-flow: column;
     justify-content: space-around;

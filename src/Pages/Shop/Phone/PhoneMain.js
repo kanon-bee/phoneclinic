@@ -18,10 +18,10 @@ const PhoneMain = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        aos.init({duration: 1500});
-
-        console.log(window.location.href);
+        // aos.init({duration: 1500});
     }, []);
+
+    console.log('phoneMain')
 
     //Defining Jsx Logically according to the device;
 

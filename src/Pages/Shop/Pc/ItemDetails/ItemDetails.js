@@ -316,7 +316,6 @@ class ItemDetails extends Component {
                 nexus7: {details: 'Google Nexus 7', img: google3},
                 nexus10: {details: 'Google Nexus 10', img: google4}
             }
-
         },
         
 
@@ -326,6 +325,7 @@ class ItemDetails extends Component {
 
     componentDidMount () {
         window.scrollTo(0, 0);
+        console.log('itemDetails');
     }
 
     render () {

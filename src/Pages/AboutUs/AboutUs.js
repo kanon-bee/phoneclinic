@@ -23,6 +23,8 @@ const AboutUs = (props) => {
             document.getElementById('contact').scrollIntoView();
         }
 
+        console.log('AboutUs')
+
     }, [])
 
 
@@ -136,4 +138,4 @@ const AboutUs = (props) => {
     )
 }
 
-export default AboutUs;
+export default React.memo(AboutUs);

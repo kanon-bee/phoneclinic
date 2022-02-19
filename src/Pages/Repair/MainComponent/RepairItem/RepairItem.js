@@ -6,6 +6,9 @@ import Aux from "../../../../Hoc/Aux/Aux";
 
 class RepairItem extends Component {
 
+    componentDidMount () {
+        console.log('repairItem');
+    }
 
     render () {
         

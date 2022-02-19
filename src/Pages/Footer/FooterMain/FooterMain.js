@@ -5,14 +5,19 @@ import UsefulLinks from '../UsefulLinks/UsefulLinks';
 import WorkingHours from '../WorkingHours/WorkingHours';
 import styles from './FooterMain.module.css';
 
-const footerMain = () => (
-    <div className={styles.Main}>
-        <SocialLinks />
-        <QuickLinks />
-        <UsefulLinks />
-        <WorkingHours />
-    </div>
-)
+const FooterMain = () => {
+
+    console.log('footerMain')
+
+    return (
+        <div className={styles.Main}>
+            <SocialLinks />
+            <QuickLinks />
+            <UsefulLinks />
+            <WorkingHours />
+        </div>
+    )
+}
 
 
-export default footerMain;
+export default React.memo(FooterMain);

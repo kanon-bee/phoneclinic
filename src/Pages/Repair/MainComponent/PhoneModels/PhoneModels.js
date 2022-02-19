@@ -6,25 +6,15 @@ import Toolbar from "../../../Toolbar/Toolbar";
 import FooterMain from '../../../Footer/FooterMain/FooterMain';
 import Sidedrawer from '../../../Sidedrawer/Sidedrawer'
 import GetAquote from "../../../../Extra/GetAqoute/GetAquote";
-// import iphone from '../../../../Assets/Images/phoneRepair/apple.jpg';
-// import Asus from '../../../../Assets/Images/phoneRepair/asus.jpg';
-// import BlackBerry from '../../../../Assets/Images/phoneRepair/blackberry.jpg';
-// import Htc from '../../../../Assets/Images/phoneRepair/htc.jpg';
-// import Huawei from '../../../../Assets/Images/phoneRepair/huawei.jpg';
-// import Lg from '../../../../Assets/Images/phoneRepair/lg.jpg';
-// import Nexus from '../../../../Assets/Images/phoneRepair/nexus.jpg';
-// import Nokia from '../../../../Assets/Images/phoneRepair/nokia.jpg';
-// import OnePlus from '../../../../Assets/Images/phoneRepair/oneplus.jpg';
-// import Pixel from '../../../../Assets/Images/phoneRepair/pixel.jpg';
-// import Sony from '../../../../Assets/Images/phoneRepair/sony.jpg';
-// import SamSung from '../../../../Assets/Images/phoneRepair/samsung.jpg';
 
 
 class PhoneModels extends Component {
 
     
     componentDidMount(){
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+
+        console.log('phoneModels');
     }
 
     render () {

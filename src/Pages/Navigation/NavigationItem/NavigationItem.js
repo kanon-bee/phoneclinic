@@ -8,11 +8,6 @@ class NavigationItem extends Component {
 
     static contextType = BaseContext;
 
-    // detectWidthChange = (event) => {
-    //     event.onchange = () => {
-
-    //     }
-    // }
 
     render () {
         let nestedLink = null;
@@ -34,7 +29,7 @@ class NavigationItem extends Component {
                         Laptop
                     </Link>
                 </ul>
-                <a className={this.props.active? styles.active : null}>{this.props.children}</a>
+                <a href="#" className={this.props.active? styles.active : null}>{this.props.children}</a>
             </li>
         }
         else if (this.props.child === 'sale'){
@@ -52,7 +47,7 @@ class NavigationItem extends Component {
                         Laptop
                     </Link>
                 </ul>
-                <a className={this.props.active? styles.active : null} >{this.props.children}</a>
+                <a href="#" className={this.props.active? styles.active : null} >{this.props.children}</a>
             </li>
         }
         else if (this.props.child === 'accessories'){
@@ -70,7 +65,7 @@ class NavigationItem extends Component {
                         Laptop
                     </Link>
                 </ul>
-                <a className={this.props.active? styles.active : null} >{this.props.children}</a>
+                <a href='#' className={this.props.active? styles.active : null} >{this.props.children}</a>
             </li>
         }
         else {

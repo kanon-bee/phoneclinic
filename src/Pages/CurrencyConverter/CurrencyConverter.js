@@ -204,7 +204,7 @@ class CurrencyConverter extends Component {
     componentDidMount () {
         axios.get('https://freecurrencyapi.net/api/v2/latest?apikey=cfaac5f0-8125-11ec-ad91-b75c453dc9f3').then(res => {
             this.setState({rate: res.data.data})
-            // console.log(res)
+            console.log('currencyConverter')
         });
 
         window.scrollTo(0, 0);
@@ -230,13 +230,6 @@ class CurrencyConverter extends Component {
 
     render () {
 
-        console.log(this.state.rate);
-
-        // const test = ['a', 'h', 'e', 'f'];
-
-        // console.log(test.sort());
-
-        
         const option = Object.keys(this.state.rate).sort().map(item => {
             return <option key={item} value={item}>{data[item]}</option>
         })

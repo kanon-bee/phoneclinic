@@ -7,6 +7,8 @@ import Backdrop from '../Backdrop/Backdrop'
 
 const SideDrawer = (props) => {
 
+    console.log('sideDrawer');
+
     return (
         <Aux>
             <Backdrop trigger={props.backdrop} click={props.toggleBackdrop}/>

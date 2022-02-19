@@ -2,12 +2,11 @@ import React from "react";
 import NavigationItem from "../NavigationItem/NavigationItem";
 import styles from './NavigationItems.module.css';
 
-const NavigationItems = (props) => {
+const NavigationItems = () => {
 
     const dirName = window.location.pathname.split('/');
 
-    console.log(window.location.pathname)
-
+    console.log('navigationItems');
 
     return (
         <nav className={styles.NavigationItems}>

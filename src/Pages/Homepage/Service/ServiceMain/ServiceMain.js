@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './ServiceMain.module.css';
 import Services from '../Services/Services';
 import phone from '../../../../Assets/Images/others/phone.png';
@@ -12,11 +12,10 @@ import { Link } from 'react-router-dom';
 
 const ServiceMain = () => {
 
-    const serviceRef = useRef();
-
+    console.log('serviceMain')
 
     return (
-        <div id="service" ref={serviceRef} className={styles.ServiceMain}>
+        <div id="service" className={styles.ServiceMain}>
             <h2>What you are Looking For Today</h2>
             <div className={styles.Ext}>
                 <Link to="/phone">
@@ -44,4 +43,4 @@ const ServiceMain = () => {
 }
 
 
-export default ServiceMain;
+export default React.memo(ServiceMain);

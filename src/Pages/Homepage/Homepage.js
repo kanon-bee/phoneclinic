@@ -4,7 +4,7 @@ import SideDrawer from "../Sidedrawer/Sidedrawer";
 import HeaderIntro1 from "./HeaderIntro/HeaderIntro1/HeaderIntro1";
 import HeaderIntro2 from "./HeaderIntro/HeaderIntro2/HeaderIntro2";
 import ServiceMain from "./Service/ServiceMain/ServiceMain";
-import WhyChooseUsMain from "./whyChooseUs/whyChooseUsMain/whyChooseUsMain";
+import WhyChooseUsMain from "./whyChooseUs/whyChooseUsMain";
 import FooterMain from "../Footer/FooterMain/FooterMain";
 import pic1 from '../../Assets/Images/service.png';
 import pic2 from '../../Assets/Images/transfer.png';
@@ -21,6 +21,9 @@ class HomePage extends Component {
         if (window.location.pathname === '/service'){
             document.getElementById('service').scrollIntoView();
         }
+
+        console.log('homePage');
+        
     }
 
 

@@ -13,8 +13,10 @@ import 'aos/dist/aos.css';
 const HeaderIntro2 = () => {
 
     useEffect(() => {
-        aos.init({duration:1900})
+        aos.init({duration:1300})
     }, [])
+
+    console.log('headeIntro2');
 
     return (
         <div className={styles.HeaderIntro2}>
@@ -53,4 +55,4 @@ const HeaderIntro2 = () => {
     )
 }
 
-export default HeaderIntro2;
+export default React.memo(HeaderIntro2);

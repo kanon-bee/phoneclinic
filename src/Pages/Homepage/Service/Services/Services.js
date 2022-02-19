@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import styles from './Services.module.css';
-import aos from 'aos';
 import 'aos/dist/aos.css';
 
 
 const Services = (props) => {
 
-    // useEffect(() => {
-    //     // aos.init({duration: 2000});
-    // }, [])
+    console.log('services')
 
     return (
         <div  data-aos="zoom-in-up" data-aos-easing="ease-out-cubic" data-aos-once="true" data-aos-duration="1500" className={styles.Services}>

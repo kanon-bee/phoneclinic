@@ -14,9 +14,11 @@ import 'aos/dist/aos.css';
 const CyberCafe = (props) => {
 
     useEffect(() => {
-        aos.init({});
+        aos.init();
         window.scrollTo(0, 0);
     }, [])
+
+    console.log('cyberCafe')
 
 
     return (
