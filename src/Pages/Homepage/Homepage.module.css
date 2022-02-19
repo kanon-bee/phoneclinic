@@ -20,6 +20,7 @@
     box-shadow: 0px 8px 3px #ddd9d9;
     background-color: white;
     border-radius: 15px;
+    max-height: 85px;
 }
 
 .Subbanner {
