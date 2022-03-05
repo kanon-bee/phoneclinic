@@ -73,7 +73,7 @@
     font-family: 'PT Serif', serif;
 }
 
-.SubDetails button {
+.btn {
     height: 50px;
     width: 150px;
     border-radius: 10px;
@@ -84,7 +84,17 @@
     cursor: pointer;
 }
 
-.SubDetails button:hover{
+.btnDisabled {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    margin: 15px;
+    background-color: #d3c1db73;
+    color: #d3d3d3;
+}
+
+.btn:hover{
     background-color: #b49abe;
     color: #f0f0f0;
 }

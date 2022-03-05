@@ -213,7 +213,14 @@ class CurrencyConverter extends Component {
     }
 
     getResult = (event) => {
-        this.setState({inputValue: event.target.value})
+        const reg = new RegExp('^[0-9]*$');
+        if (reg.test(event.target.value)){
+            // console.log(this.state.inputValue);
+            this.setState({inputValue: event.target.value})
+        }
+        else{
+            alert('Please Enter Numbers Only');
+        }
     }
 
     selectCountry = (event) => {
@@ -246,7 +253,7 @@ class CurrencyConverter extends Component {
                         <h3>Send money to all over the world via trusted company from our shop</h3>
                         <div className={styles.SubDetails}>
                             <div className={styles.Input}>
-                                <select defaultValue="" onChange={this.selectCountry}>
+                                <select defaultValue="" onChange={this.selectCountry} required>
                                     <option disabled={true} value="">Select A Country</option>
                                     {option}
                                 </select>
@@ -260,7 +267,9 @@ class CurrencyConverter extends Component {
                                 <h2>{this.state.queryResult}</h2>
                             </div>
                             
-                            <button onClick={this.getQuery}>Check Rates</button>
+                            <button className={this.state.inputValue === '' || this.state.selectValue === '' ? styles.btnDisabled : styles.btn}
+                                    disabled={ this.state.inputValue === '' || this.state.selectValue === '' ? true : false }
+                                    onClick={this.getQuery}>Check Rates</button>
 
                         </div>                
                     </div>
