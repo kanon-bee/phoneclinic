@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import styles from './GetAquote.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faPhoneAlt} from '@fortawesome/free-solid-svg-icons'
+
 
 const GetAquote = (props) => {
 
@@ -12,11 +15,14 @@ const GetAquote = (props) => {
     if (props.device === 'pc' || 'laptop') {
         msg = <div className={styles.Main}>
                 <h3>Cant find what you looking for</h3>
-                <h4>Call Us On</h4>
-                <div>
+                <div className={styles.Sub}>
                     <h4>Phone Clinic</h4>
-                    <h4>020 7237 2724</h4>
+                    <div className={styles.Call}>
+                        <FontAwesomeIcon icon={faPhoneAlt} color="#818181"/>
+                        <a href="tel: 02072372724" className={styles.Num}>02072372724</a>
+                    </div>
                     <h4>271 Old kent Road</h4>
+                    <h4>SE1 5LU</h4>
                 </div>
                 
             </div>

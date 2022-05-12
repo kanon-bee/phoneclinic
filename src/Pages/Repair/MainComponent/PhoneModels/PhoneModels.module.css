@@ -6,14 +6,24 @@
     text-decoration: none;
 }
 
-.Pic {
+.PicMain {
     width: 100%;
     margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Pic img {
-    height: 470px;
-    width: 45%;
+.Pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PicMain img {
+    height: 100%;
+    width: 38%;
 }
 
 .Mobile {
@@ -26,7 +36,7 @@
 }
 
 @media (max-width: 1000px) {
-    .Pic img {
+    .PicMain img {
         height: auto;
     }
 }

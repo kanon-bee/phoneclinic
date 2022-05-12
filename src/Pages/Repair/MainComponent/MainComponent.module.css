@@ -41,6 +41,26 @@
     line-height: 30px;
 }
 
+.Intro1 {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.Intro1List {
+    list-style: auto;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 120px;
+}
+
 .Para p {
     text-align: left;
 }

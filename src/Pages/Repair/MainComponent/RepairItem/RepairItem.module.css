@@ -1,17 +1,17 @@
 .Main {
-    width: 150px;
-    height: 150px;
+    align-items: center;
+    background-color: #bbbfca;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    height: 115px;
     justify-content: center;
-    padding:20px;
     margin: 20px;
-    border: 1px solid transparent;
+    padding: 20px;
     text-decoration: none;
-    border-radius: 20px;
-    background-color: #BBBFCA;
-    cursor: pointer;
+    width: 115px;
 }
 
 .Main a {
@@ -19,9 +19,8 @@
 }
 
 .Main img {
-    height: 80px;
-    width: 80px;
-    margin: 2px 0;
+    /* height: 80px; */
+    width: 50px;
 }
 
 .Main:hover {

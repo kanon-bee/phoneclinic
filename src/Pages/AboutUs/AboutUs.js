@@ -14,6 +14,7 @@ import money from '../../Assets/Images/moneyTransfer.png';
 import exchange from '../../Assets/Images/exchange.png';
 import accessories from '../../Assets/Images/accessories.png';
 
+
 const AboutUs = (props) => {
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const AboutUs = (props) => {
             document.getElementById('contact').scrollIntoView();
         }
 
-        console.log('AboutUs')
+        // console.log('AboutUs')
 
     }, [])
 

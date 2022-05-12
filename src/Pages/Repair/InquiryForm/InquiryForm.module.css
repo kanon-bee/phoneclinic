@@ -235,11 +235,11 @@ form button:hover{
     max-height: 400px;
 }
 
-.Contact {
+/* .Contact {
     width: 90%;
     margin: 50px auto;
     font-family: 'PT Serif', serif;
-}
+} */
 
 
 @media (max-width: 912px) {

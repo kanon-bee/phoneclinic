@@ -63,18 +63,30 @@ class MainComponent extends Component {
                         <h4>Please Start by Choosing you Device</h4>
                     </div>
                 </div>
-    
-                <div className={styles.Para}>
-                    <p>Whether you have got an iMac, Macbook Pro or Macbook Air we know how important your Mac is to you and no matter what the damage to it, we understand you will want this fixed as soon as possible. At iSmash, we provide our customers with express and high-quality service.</p>
-                    <p>All our iSmash stores have dedicated technicians that specialise in repairing and finding the best solution to fix your Mac. We provide a range of repairs for Macbooks and iMac which include screen replacement, battery replacement, keyboard replacement, touchpad replacement,
-                        charging issues, liquid diagnostics, and data diagnostics. Book a free consultation and our technicians will provide the best solution to get your device fixed.</p>
+
+                <div className={styles.Intro1}>
+                    <h2>Repair process is very simple. All you have to do is:</h2>
+                    
+                    <ul className={styles.Intro1List}>
+                        <li>Select your Phone's Make (Brand)</li>
+                        <li>Select your Phone's Model</li>
+                        <li>Book an Appoinment by filling up a form Or</li>
+                        <li>Call us on 020 7237 2724</li>
+                    </ul>
                 </div>
+    
     
                 <div className={styles.SelectPhone}>
                     {this.props.device === "laptop" ? <h2>Our Services</h2> : <h2>Select Your Device</h2>}
                     <RepairConsole Data={this.props.data} img={this.props.img} device={this.props.device} />
                 </div>
     
+                <div className={styles.Para}>
+                    <p>Whether you have got an iMac, Macbook Pro or Macbook Air we know how important your Mac is to you and no matter what the damage to it, we understand you will want this fixed as soon as possible. At iSmash, we provide our customers with express and high-quality service.</p>
+                    <p>All our iSmash stores have dedicated technicians that specialise in repairing and finding the best solution to fix your Mac. We provide a range of repairs for Macbooks and iMac which include screen replacement, battery replacement, keyboard replacement, touchpad replacement,
+                        charging issues, liquid diagnostics, and data diagnostics. Book a free consultation and our technicians will provide the best solution to get your device fixed.</p>
+                </div>
+
                 <GetAquote device={this.props.device}/>
     
                 <FooterMain />

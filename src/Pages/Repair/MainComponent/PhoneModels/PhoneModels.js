@@ -37,10 +37,12 @@ class PhoneModels extends Component {
                             toggleBackdrop={this.props.toggleBackdrop}
                             switch={this.props.switch} />
 
-                <div className={styles.Pic}>
-                    {Object.keys(this.props.pic).map(item => {
-                        return item === this.props.model ? <img key={item} src={this.props.pic[item]} alt={item}/>:  null
-                    })}
+                <div className={styles.PicMain}>
+                    <div className={styles.Pic}>
+                        {Object.keys(this.props.pic).map(item => {
+                            return item === this.props.model ? <img key={item} src={this.props.pic[item]} alt={item}/>:  null
+                        })}
+                    </div>
                 </div>
 
                 <div className={styles.Mobile}>

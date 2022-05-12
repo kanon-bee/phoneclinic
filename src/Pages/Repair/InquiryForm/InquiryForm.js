@@ -12,6 +12,7 @@ import banner from '../../../Assets/Images/banner.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import Modal from '../../../Extra/Modal/Modal';
+import GetAquote from '../../../Extra/GetAqoute/GetAquote';
 
 const InquiryForm = (props) => {
 
@@ -293,10 +294,12 @@ const InquiryForm = (props) => {
                 
             </div>
 
-            <div className={styles.Contact}>
+            {/* <div className={styles.Contact}>
                 <h2>Alternatively you can call us on</h2>
                 <h3>020 7237 2724</h3>
-            </div>
+            </div> */}
+
+            <GetAquote />
 
             <FooterMain />
 
